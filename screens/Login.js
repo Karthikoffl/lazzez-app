@@ -1,20 +1,56 @@
-import { View, Text, ScrollView, StyleSheet, ImageBackground, Dimensions, TouchableOpacity, Image } from 'react-native';
-import React from 'react';
-import { MainView, LoginTitle, LoginButton, ButtonText, SocialLoginView, LinkText, FooterView, OrLine, OrContainer } from '../src/global/styles';
+import { 
+  View, 
+  Text, 
+  StyleSheet, 
+  ImageBackground, 
+  Dimensions, 
+  TouchableOpacity, 
+  Image,
+  Linking
+} from 'react-native';
+import React, { useRef, useState } from 'react';
+import { 
+  MainView, 
+  LoginTitle, 
+  LoginButton, 
+  ButtonText, 
+  SocialLoginView, 
+  LinkText, 
+  FooterView, 
+  OrLine, 
+  OrContainer 
+} from '../src/global/styles';
 import { TextInput } from 'react-native-paper';
 import { FontAwesome } from '@expo/vector-icons';
 
-const Login = () => {
+const Login = ({navigation}) => {
+
+  const [phoneNumber, setPhoneNumber] = useState('');
+
   return (
     <MainView>
       <ImageBackground source={require('../assets/images/bg.png')} style={{height:Dimensions.get('window').height / 2.5}}></ImageBackground>
       <View style={styles.bottomView}>
         <View style={{padding: 40}}>
             <LoginTitle>Enter Your Mobile Number To Get OTP</LoginTitle>
-            <TextInput left={<TextInput.Affix text="+91"/>} style={{marginTop: 20}} keyboardType='numeric' mode='outlined' activeOutlineColor='#F49F1C' placeholder='10 Digit Mobile Number' label='Mobile Number'/>
-            <LoginButton  
-              onPress={() => {}}
-            >
+            <TextInput 
+                left={<TextInput.Affix text="+91  |"/>} 
+                style={{marginTop: 20}} 
+                keyboardType='phone-pad' 
+                autoCompleteType='tel'
+                maxLength={10}
+                mode='outlined' 
+                activeOutlineColor='#F49F1C' 
+                placeholder='10 Digit Mobile Number' 
+                label='Mobile Number' 
+                onChangeText={text => setPhoneNumber(text)} 
+              />
+            <LoginButton 
+              onPress={() => {
+                navigation.navigate('OtpVerify', {phoneNumber})
+              }
+              }
+              >
               <ButtonText>Get OTP</ButtonText>
             </LoginButton>
         </View>
@@ -37,9 +73,9 @@ const Login = () => {
       </SocialLoginView>
       <FooterView>
         <Text style={{ textAlign: 'center', justifyContent: 'center' }}>By Clicking, I Accept The  
-          <TouchableOpacity><LinkText> Terms Of Service</LinkText>
+          <TouchableOpacity  onPress={() => Linking.openURL('#')}><LinkText> Terms Of Service</LinkText>
           </TouchableOpacity>  And 
-          <TouchableOpacity><LinkText>Privacy Policy</LinkText></TouchableOpacity>
+          <TouchableOpacity onPress={() => Linking.openURL('#')}><LinkText>Privacy Policy</LinkText></TouchableOpacity>
         </Text>
       </FooterView>
     </MainView>

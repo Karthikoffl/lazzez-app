@@ -1,10 +1,10 @@
-import React from 'react';
 import styled from 'styled-components/native';
 
 export const colors = [];
 
 export const Main = styled.View`
   flex: 1;
+  background-color: #fff;
   align-items: center;
   justify-content: center;
 `;
@@ -75,4 +75,18 @@ export const OrLine = styled.View`
   height: 1px;
   margin-left: 20px;
   margin-right: 20px;
-  `;
+`;
+
+export const ResendButtonView = styled.Text`
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+`;
+
+export const OtpContainer = styled.View`
+  margin-top: 20px;
+  margin-bottom: 5px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+`;
