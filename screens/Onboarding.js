@@ -5,16 +5,18 @@ import AppIntroSlider from "react-native-app-intro-slider";
 
 
 const OnBoardingScreen = ({navigation}) => {
-    const [showHomePage, setShowHomePage] = useState(true);
     const buttonLabel = (label) => {
         return(
           <View style={{
-            padding: 12
+            backgroundColor: '#F49F1C',
+            paddingHorizontal: 20,
+            paddingVertical: 10,
+            borderRadius: 3,
           }}>
             <Text style={{
-              color: '#221E1E',
+              color: '#fff',
               fontWeight: '600',
-              fontSize: 30,
+              fontSize: 18,
             }}>
               {label}
             </Text>
@@ -41,8 +43,8 @@ const OnBoardingScreen = ({navigation}) => {
               <Image
                 source={item.image}
                 style={{
-                  width: 200,
-                  height: 400,
+                  width: 300,
+                  height: 500,
                 }}
                 resizeMode="contain"
               />
@@ -50,6 +52,7 @@ const OnBoardingScreen = ({navigation}) => {
                 fontWeight: 'bold',
                 color: '#221E1E',
                 fontSize: 24,
+                marginBottom: 10,
               }}>
                 {item.title}
               </Text>
@@ -65,7 +68,7 @@ const OnBoardingScreen = ({navigation}) => {
         }}
         activeDotStyle={{
           backgroundColor: '#722620',
-          width: 30,
+          width: 10,
         }}
         showSkipButton
         renderNextButton={() => buttonLabel("Next")}
