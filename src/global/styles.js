@@ -90,3 +90,41 @@ export const OtpContainer = styled.View`
   align-items: center;
   flex-direction: row;
 `;
+
+export const MainHomeView = styled.SafeAreaView`
+  flex: 1;
+  background-color: #fff;
+`;
+
+export const Header = styled.View`
+  flex-direction: row;
+  background-color: #fff;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const HomeLogo = styled.View`
+  flex: 0.2;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
+`; 
+
+export const LocationView = styled.View`
+  flex: 0.5;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 15px;
+`;
+
+export const SearchView = styled.View`
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #FFF4E2;
+  padding: 15px 0;
+  margin: 0 20px;
+  border-radius: 5px;
+`;

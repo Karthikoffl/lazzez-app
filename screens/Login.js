@@ -47,6 +47,7 @@ const Login = ({navigation}) => {
               />
             <LoginButton 
               onPress={() => {
+                console.log(phoneNumber);
                 navigation.navigate('OtpVerify', {phoneNumber})
               }
               }

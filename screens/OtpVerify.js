@@ -18,8 +18,11 @@ import {
     OtpContainer
   } from '../src/global/styles';
   import { TextInput } from 'react-native-paper';
+  import { useNavigation } from '@react-navigation/native';
   
   const OtpVerify = ({route: {params: {phoneNumber}}}) => {
+
+    const navigation = useNavigation();
     
     const firstInput = useRef();
     const secondInput = useRef();
@@ -122,7 +125,10 @@ import {
                 </View>
               </OtpContainer>
               <LoginButton 
-                onPress={() => console.log(otp)}
+                onPress={() => {
+                    console.log(otp)
+                    navigation.navigate('Home');
+                }}
                 >
                 <ButtonText>Continue</ButtonText>
               </LoginButton>
