@@ -10,7 +10,7 @@ const HomeScreen = () => {
   return (
     <MainHomeView>
       <HomeHeader />
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <MainCarousel />
         <Categories />
       </ScrollView>

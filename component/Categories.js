@@ -1,7 +1,8 @@
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import React, {useState} from 'react';
 import { filterData } from '../src/global/Data';
-
+import HorizontalCard from './HorizontalCard'; 
+import VerticalCard from './VerticalCard';
 
 
 const Categories = () => {
@@ -37,15 +38,16 @@ const Categories = () => {
               )}
             />
           </View>
-          <View style={{flex: 1}}>
-            <View style={{flexDirection: 'row', marginLeft: 22, marginTop: 35, alignItems: 'center', justifyContent: 'space-between'}}>
-              <Text style={{fontWeight: 600, fontSize: 18}}>Set Menu</Text>
-              <TouchableOpacity 
-                style={{alignItems: 'center', justifyContent: 'center', marginRight: 22}}>
-                  <Text style={{color: '#F49F1C', fontSize: 14, textAlign: 'center'}}>View All</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
+            <HorizontalCard 
+              id='0'
+              title='Set Menu'
+              button='View All'
+            />
+            <VerticalCard 
+              id='0'
+              title='Popular Items'
+              button='View All'
+            />
         </View>
   );
 };
