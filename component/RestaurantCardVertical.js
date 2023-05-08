@@ -2,6 +2,7 @@ import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native';
 import React, {useEffect} from 'react';
 import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+// import Currency from 'react-currency-formatter';
 
 const RestaurantCardVertical = ({
     id,
@@ -48,14 +49,14 @@ const RestaurantCardVertical = ({
             <FontAwesome style={{padding: 1.5}} name="star" size={15} color="#F49F1C" />
             <FontAwesome style={{padding: 1.5}} name="star" size={15} color="#F49F1C" />
             <FontAwesome style={{padding: 1.5}} name="star" size={15} color="#F49F1C" />
-            <FontAwesome style={{padding: 1.5}} name="star" size={15} color="#F49F1C" />
-            
+            <FontAwesome style={{padding: 1.5}} name="star" size={15} color="#F49F1C" />    
         </View>
         <View style={{paddingTop: 5, paddingBottom: 5, flexDirection: 'row'}}>
             <MaterialIcons name="delivery-dining" size={16} color="black" />
             <Text style={{paddingHorizontal: 5, fontSize: 12}}>{delivery}</Text>
         </View>
         <View style={{paddingVertical: 5}}>
+            {/* <Currency quantity={price} currency="INR" /> */}
             <Text style={{fontSize: 16, fontWeight: 600, color: '#4B4B4B'}}>₹350</Text>
         </View>
       </View>

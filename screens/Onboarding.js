@@ -11,7 +11,7 @@ const OnBoardingScreen = ({navigation}) => {
             backgroundColor: '#F49F1C',
             paddingHorizontal: 20,
             paddingVertical: 10,
-            borderRadius: 3,
+            borderRadius: 6,
           }}>
             <Text style={{
               color: '#fff',
