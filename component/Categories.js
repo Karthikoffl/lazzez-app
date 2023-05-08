@@ -1,9 +1,8 @@
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image } from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { filterData } from '../src/global/Data';
 import HorizontalCard from './HorizontalCard'; 
 import VerticalCard from './VerticalCard';
-
 
 const Categories = () => {
 
@@ -38,6 +37,7 @@ const Categories = () => {
               )}
             />
           </View>
+  
             <HorizontalCard 
               id='0'
               title='Set Menu'

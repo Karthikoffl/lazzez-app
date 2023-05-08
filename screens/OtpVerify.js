@@ -127,7 +127,7 @@ import {
               <LoginButton 
                 onPress={() => {
                     console.log(otp)
-                    navigation.navigate('Home');
+                    navigation.navigate('PersonalInfo');
                 }}
                 >
                 <ButtonText>Continue</ButtonText>

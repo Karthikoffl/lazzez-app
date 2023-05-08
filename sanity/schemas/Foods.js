@@ -19,7 +19,7 @@ export default {
         type: 'crossDatasetReference',
         title: 'Category',
         dataset: 'category_name',
-        validation: (Rule) => Rule.required(),
+        // validation: (Rule) => Rule.required(),
         to: [
             { 
                 type: 'category_name',
@@ -35,18 +35,17 @@ export default {
         name: 'rating',
         type: 'number',
         title: 'Enter a number between 1 to 5',
-        validation: (Rule) => Rule.required().min(1).max(5).error("Please enter a number between 1 to 5"),
+        validation: (Rule) => Rule.min(1).max(5).error("Please enter a number between 1 to 5"),
     },
     {
         name: 'short_description',
         type: 'string',
         title: 'Short Description',
-        validation: (Rule) => Rule.required(),
     },
     {
         name: 'image',
         type: 'image',
-        title: 'Image Of The Category',
+        title: 'Image Of The Food',
         validation: (Rule) => Rule.required(),
     },
 ]
