@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 import { FontAwesome } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 const RestaurantCard = ({
     id,
@@ -9,9 +10,20 @@ const RestaurantCard = ({
     rating,
     delivery,
 }) => {
+  const navigation = useNavigation();
+
   return (
     <TouchableOpacity 
         style={{height: 200, width: 170, backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.3}}
+        onPress={() => {
+          navigation.navigate('Product', {
+            id,
+            image,
+            title,
+            rating,
+            delivery,
+          });
+        }}
     >
       <Image 
         source={image}

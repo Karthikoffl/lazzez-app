@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native';
 import React, {useEffect} from 'react';
 import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 const RestaurantCardVertical = ({
     id,
@@ -10,10 +11,20 @@ const RestaurantCardVertical = ({
     delivery,
 }) => {
 
+  const navigation = useNavigation();
 
   return (
     <Pressable 
         style={{height: 160, width: '100%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2}}
+        onPress={() => {
+          navigation.navigate('Product', {
+            id,
+            image,
+            title,
+            rating,
+            delivery,
+          });
+        }}
     >
       <View style={{flexDirection: 'row', width: 150}}>
       <Image 
