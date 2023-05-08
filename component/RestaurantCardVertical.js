@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native';
 import React, {useEffect} from 'react';
-import { FontAwesome } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
+import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
 
 const RestaurantCardVertical = ({
     id,
@@ -11,7 +10,6 @@ const RestaurantCardVertical = ({
     delivery,
 }) => {
 
-  
 
   return (
     <Pressable 
@@ -24,9 +22,12 @@ const RestaurantCardVertical = ({
         />
       </View>
       <View style={{position: 'absolute', flexDirection: 'column', left: 160, top: 20}}>
-      <TouchableOpacity style={{position: 'absolute', left: 166, top: -15, zIndex: -1}}>
+      <TouchableOpacity style={{position: 'absolute', left: 166, top: -10, zIndex: -1}} onPress={() => {}}>
           <MaterialIcons name="favorite-border" size={30} color="#F49F1C" />
-        </TouchableOpacity>
+      </TouchableOpacity>
+      <TouchableOpacity style={{position: 'absolute', left: 166, top: 100, zIndex: -1}} onPress={() => {}}>
+          <Ionicons name="add-outline" size={30} color="#7B7A7A" />
+      </TouchableOpacity>
       <View style={{}}>
         <View style={{paddingTop: 10}}>
             <Text style={{fontWeight: 'bold', fontSize: 16}}>{title}</Text>
