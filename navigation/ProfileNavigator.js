@@ -1,12 +1,15 @@
-import { View, Text, SafeAreaView } from 'react-native';
 import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ProfileScreen from '../screens/ProfileScreen';
+
+const Stack = createNativeStackNavigator();
 
 const ProfileNavigator = () => {
   return (
-    <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>ProfileNavigator</Text>
-    </SafeAreaView>
-  )
-}
+    <Stack.Navigator>
+        <Stack.Screen options={{ headerShown: false }} name="Profile" component={ProfileScreen} />
+    </Stack.Navigator>
+  );
+};
 
-export default ProfileNavigator
+export default ProfileNavigator;

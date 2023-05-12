@@ -1,11 +1,16 @@
-import { View, Text, SafeAreaView } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import OrderScreen from '../screens/OrderScreen';
+import OrderOverviewScreen from '../screens/OrderOverviewScreen';
+
+const Stack = createNativeStackNavigator();
 
 const OrderNavigator = () => {
   return (
-    <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>OrderNavigator</Text>
-    </SafeAreaView>
+    <Stack.Navigator>
+        <Stack.Screen options={{ headerShown: false }} name="Order" component={OrderScreen} />
+        <Stack.Screen options={{ headerShown: false }} name="OrderOverview" component={OrderOverviewScreen} />
+    </Stack.Navigator>
   );
 };
 

@@ -1,18 +1,17 @@
-import { View, Text, SafeAreaView, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { Ionicons } from '@expo/vector-icons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import PlaceOrderScreen from '../screens/PlaceOrderScreen';
+import CartScreen from '../screens/CartScreen';
 
-const CheckoutNavigation = ({navigation}) => {
+const Stack = createNativeStackNavigator();
+
+const CheckoutNavigation = () => {
   return (
-    <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Ionicons name="arrow-back" size={30} color="black" />
-            </TouchableOpacity>
-            <Text>My Cart</Text>
-        </View>
-    </SafeAreaView>
-  )
-}
+    <Stack.Navigator>
+        <Stack.Screen options={{ headerShown: false }} name="Cart" component={CartScreen} />
+        <Stack.Screen options={{ headerShown: false }} name="OrderConfirm" component={PlaceOrderScreen} />
+    </Stack.Navigator>
+  );
+};
 
-export default CheckoutNavigation
+export default CheckoutNavigation;

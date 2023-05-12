@@ -14,13 +14,13 @@ const BottomNav = () => {
         <Tab.Screen name="Home" component={HomeScreen} options={{headerShown: false, tabBarIcon: ({color, size}) => (
             <Entypo name="home" size={size} color={color} />
   )}}/>
-        <Tab.Screen name="Cart" component={CheckoutNavigation} options={{headerShown: false, tabBarIcon: ({color, size}) => (
+        <Tab.Screen name="CartNav" component={CheckoutNavigation} options={{headerShown: false, tabBarIcon: ({color, size}) => (
             <Ionicons name="cart" size={size} color={color} />
   )}} />
-        <Tab.Screen name="Order" component={OrderNavigator} options={{headerShown: false, tabBarIcon: ({color, size}) => (
+        <Tab.Screen name="OrderNav" component={OrderNavigator} options={{headerShown: false, tabBarIcon: ({color, size}) => (
             <FontAwesome5 name="shopping-bag" size={size} color={color} />
   )}} />
-        <Tab.Screen name="Profile" component={ProfileNavigator} options={{headerShown: false, tabBarIcon: ({color, size}) => (
+        <Tab.Screen name="ProfileNav" component={ProfileNavigator} options={{headerShown: false, tabBarIcon: ({color, size}) => (
             <MaterialCommunityIcons name="account" size={size} color={color} />
   )}} />
   </Tab.Navigator>
