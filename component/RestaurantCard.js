@@ -16,7 +16,7 @@ const RestaurantCard = ({
     <TouchableOpacity 
         style={{height: 200, width: 170, backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.3}}
         onPress={() => {
-          navigation.navigate('Product', {
+          navigation.navigate('ProductScreen', {
             id,
             image,
             title,

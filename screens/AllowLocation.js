@@ -1,7 +1,8 @@
 import { View, Image, TouchableOpacity } from 'react-native';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import styled from 'styled-components/native';
+import { Location, Permissions } from 'expo-location';
 
 
 const MainView = styled.View`
@@ -54,6 +55,28 @@ const ButtonText2 = styled.Text`
 `;
 
 const AllowLocation = ({navigation}) => {
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS === 'android' && !Device.isDevice) {
+        setErrorMsg(
+          'Oops, Location access denied on your device!'
+        );
+        return;
+      }
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+    })();
+  }, []);
+
   return (
     <MainView>
       <View style={{padding: 20, marginTop: 40}}>

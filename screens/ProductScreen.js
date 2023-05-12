@@ -36,8 +36,8 @@ const ProductScreen = () => {
       <View style={{backgroundColor: '#fff'}}>
         <View style={{flexDirection: 'row', paddingHorizontal: 15, paddingTop: 30}}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>{title}</Text>
-          <TouchableOpacity style={{paddingLeft: 118}}>
-            <MaterialIcons name="favorite-border" size={30} color="#F49F1C" />
+          <TouchableOpacity style={{paddingLeft: 118}} onPress={() => setIsPressed((isPressed) => !isPressed)} >
+            <MaterialIcons name={!isPressed ? "favorite-border" : "favorite"} size={30} color="#F49F1C" />
           </TouchableOpacity>         
         </View>
         <View style={{paddingLeft: 15, paddingBottom: 5, flexDirection: 'row', alignItems: 'center'}}>

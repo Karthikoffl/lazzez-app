@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native';
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 // import Currency from 'react-currency-formatter';
@@ -11,6 +11,7 @@ const RestaurantCardVertical = ({
     rating,
     delivery,
 }) => {
+  const [isPressed, setIsPressed] = useState(false);
 
   const navigation = useNavigation();
 
@@ -18,7 +19,7 @@ const RestaurantCardVertical = ({
     <Pressable 
         style={{height: 160, width: '100%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2}}
         onPress={() => {
-          navigation.navigate('Product', {
+          navigation.navigate('ProductScreen', {
             id,
             image,
             title,
@@ -34,8 +35,8 @@ const RestaurantCardVertical = ({
         />
       </View>
       <View style={{position: 'absolute', flexDirection: 'column', left: 160, top: 20}}>
-      <TouchableOpacity style={{position: 'absolute', left: 166, top: -10, zIndex: -1}} onPress={() => {}}>
-          <MaterialIcons name="favorite-border" size={30} color="#F49F1C" />
+      <TouchableOpacity style={{position: 'absolute', left: 166, top: -10, zIndex: -1}} onPress={() => setIsPressed((isPressed) => !isPressed)}>
+          <MaterialIcons name={!isPressed ? "favorite-border" : "favorite"} size={30} color="#F49F1C" />
       </TouchableOpacity>
       <TouchableOpacity style={{position: 'absolute', left: 166, top: 100, zIndex: -1}} onPress={() => {}}>
           <Ionicons name="add-outline" size={30} color="#7B7A7A" />
