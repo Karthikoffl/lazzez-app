@@ -1,10 +1,16 @@
-import { View, Text, SafeAreaView } from 'react-native'
-import React from 'react'
+import { View, Text, SafeAreaView, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { Ionicons } from '@expo/vector-icons';
 
-const CheckoutNavigation = () => {
+const CheckoutNavigation = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>CheckoutNavigation</Text>
+        <View style={{flexDirection: 'row', alignItems: 'center', flex: 1}}>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+                <Ionicons name="arrow-back" size={30} color="black" />
+            </TouchableOpacity>
+            <Text>My Cart</Text>
+        </View>
     </SafeAreaView>
   )
 }

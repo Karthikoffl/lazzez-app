@@ -6,7 +6,7 @@ const OrderNavigator = () => {
     <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>OrderNavigator</Text>
     </SafeAreaView>
-  )
-}
+  );
+};
 
 export default OrderNavigator
