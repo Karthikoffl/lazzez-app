@@ -2,6 +2,7 @@ import { View, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import styled from 'styled-components/native';
+import { useNavigation } from '@react-navigation/native';
 
 
 const MainView = styled.View`
@@ -53,7 +54,9 @@ const ButtonText2 = styled.Text`
   font-weight: 600;
 `;
 
-const AllowNotify = ({navigation}) => {
+const AllowNotify = () => {
+  const navigation = useNavigation();
+
   return (
     <MainView>
       <View style={{padding: 20, marginTop: 40}}>
@@ -68,7 +71,7 @@ const AllowNotify = ({navigation}) => {
             />
             <LoginButton 
               onPress={() => {
-                navigation.navigate('Home')
+                navigation.navigate('Login')
               }
               }
               >

@@ -1,17 +1,30 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import ProductScreen from '../screens/ProductScreen';
-import BottomNav from './BottomNav';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Entypo, Ionicons, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
+import ProfileNavigator from './ProfileNavigator';
+import CheckoutNavigation from './CheckoutNavigation';
+import OrderNavigator from './OrderNavigator';
+import HomeNavigator from './HomeNavigator';
 
-const Stack = createNativeStackNavigator(); 
+const Tab = createBottomTabNavigator();
 
-const AppNavigator = () => {
+const BottomNav = () => {
   return (
-    <Stack.Navigator>
-        <Stack.Screen options={{ headerShown: false }} name="ProductScreen" component={ProductScreen} />
-        <Stack.Screen options={{ headerShown: false }} name="BottomNav" component={BottomNav} />
-    </Stack.Navigator>
+    <Tab.Navigator screenOptions={{tabBarActiveTintColor: '#F49F1C', tabBarInactiveTintColor: '#7B7A7A' }}>
+        <Tab.Screen name="Home" component={HomeNavigator} options={{headerShown: false, tabBarIcon: ({color, size}) => (
+            <Entypo name="home" size={size} color={color} />
+  )}}/>
+        <Tab.Screen name="Cart" component={CheckoutNavigation} options={{headerShown: false, tabBarIcon: ({color, size}) => (
+            <Ionicons name="cart" size={size} color={color} />
+  )}} />
+        <Tab.Screen name="Order" component={OrderNavigator} options={{headerShown: false, tabBarIcon: ({color, size}) => (
+            <FontAwesome5 name="shopping-bag" size={size} color={color} />
+  )}} />
+        <Tab.Screen name="Profile" component={ProfileNavigator} options={{headerShown: false, tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="account" size={size} color={color} />
+  )}} />
+  </Tab.Navigator>
   );
 };
 
-export default AppNavigator
+export default BottomNav

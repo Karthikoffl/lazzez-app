@@ -8,7 +8,7 @@ import {
   Image,
   Linking
 } from 'react-native';
-import React, { useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { 
   MainView, 
   LoginTitle, 
@@ -21,39 +21,55 @@ import {
   OrContainer 
 } from '../src/global/styles';
 import { TextInput } from 'react-native-paper';
-import { FontAwesome } from '@expo/vector-icons';
+import { AuthenticationContext } from '../authentication/authentication.context';
+import { ActivityIndicator, MD2Colors  } from "react-native-paper";
+
 
 const Login = ({navigation}) => {
-
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { onLogin, error, isLoading } = useContext(AuthenticationContext);
 
   return (
     <MainView>
       <ImageBackground source={require('../assets/images/bg.png')} style={{height:Dimensions.get('window').height / 2.5}}></ImageBackground>
       <View style={styles.bottomView}>
         <View style={{padding: 40}}>
-            <LoginTitle>Enter Your Mobile Number To Get OTP</LoginTitle>
+            <LoginTitle>Login Using Email Address</LoginTitle>
             <TextInput 
-                left={<TextInput.Affix text="+91  |"/>} 
                 style={{marginTop: 20}} 
-                keyboardType='phone-pad' 
-                autoCompleteType='tel'
-                maxLength={10}
+                keyboardType='email-address'
                 mode='outlined' 
                 activeOutlineColor='#F49F1C' 
-                placeholder='10 Digit Mobile Number' 
-                label='Mobile Number' 
-                onChangeText={text => setPhoneNumber(text)} 
+                placeholder='Email Address' 
+                label='Email' 
+                value={email}
+                onChangeText={(u) => setEmail(u)}
+                autoCapitalize="none"
               />
+              <TextInput 
+                style={{marginTop: 20}} 
+                mode='outlined' 
+                activeOutlineColor='#F49F1C' 
+                placeholder='Password' 
+                label='Password' 
+                autoCapitalize="none"
+                secureTextEntry 
+                onChangeText={(p) => setPassword(p)}
+                value={password}
+              />
+              {!isLoading ? (
             <LoginButton 
-              onPress={() => {
-                console.log(phoneNumber);
-                navigation.navigate('OtpVerify', {phoneNumber})
-              }
-              }
+              onPress={() => onLogin(email, password)}
               >
-              <ButtonText>Get OTP</ButtonText>
+              <ButtonText>Login</ButtonText>
             </LoginButton>
+              ) : (
+                <ActivityIndicator animating={true} color={MD2Colors.orange500} />
+              )}
+            <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center', marginTop: 40}} onPress={() => navigation.navigate('Register')}>
+              <Text style={{fontWeight: 600, fontSize: 16, color: '#F49F1C'}}>Register Now</Text>
+            </TouchableOpacity>
         </View>
         <OrContainer>
           <OrLine />
@@ -62,9 +78,9 @@ const Login = ({navigation}) => {
         </OrContainer>
       </View>
       <SocialLoginView>
-        <TouchableOpacity onPress={() => {}}>
+        {/* <TouchableOpacity onPress={() => {}}>
           <FontAwesome name="envelope" size={24} color="gray" />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TouchableOpacity onPress={() => {}}>
           <Image  source={require('../assets/images/gmail.png')} />
         </TouchableOpacity>  
@@ -89,7 +105,7 @@ const styles = StyleSheet.create({
     bottomView: {
         flex: 1.5,
         backgroundColor: '#fff',
-        bottom: 50,
+        bottom: 100,
         borderTopStartRadius: 30,
         borderTopEndRadius: 30,
     }

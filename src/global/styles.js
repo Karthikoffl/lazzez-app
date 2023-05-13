@@ -46,7 +46,7 @@ export const SocialLoginView = styled.View`
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
-  bottom: 110px;
+  bottom: 40px;
   width: 80%;
   margin: auto;
 `;
@@ -65,7 +65,6 @@ export const LinkText = styled.Text`
 export const OrContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-top: 10px;
   margin-bottom: 10px;
 `;
 
