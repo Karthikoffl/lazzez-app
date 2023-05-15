@@ -2,10 +2,11 @@ import { View, Text, Image, ScrollView, TouchableOpacity, Pressable } from 'reac
 import React, {useState} from 'react';
 import {useNavigation, useRoute } from '@react-navigation/native';
 import { Ionicons, MaterialIcons, FontAwesome } from '@expo/vector-icons';
+import { Checkbox } from 'react-native-paper';
 
 const ProductScreen = () => {
   const navigation = useNavigation();
-
+  const [checked, setChecked] = React.useState(false);
   const [isPressed, setIsPressed] = useState(false);
 
   const {
@@ -33,7 +34,7 @@ const ProductScreen = () => {
           <Ionicons name="arrow-back-outline" size={30} color="black" />
         </TouchableOpacity>
       </View>
-      <View style={{backgroundColor: '#fff'}}>
+      <View style={{backgroundColor: '#fff', height: '100%'}}>
         <View style={{flexDirection: 'row', paddingHorizontal: 15, paddingTop: 30}}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>{title}</Text>
           <TouchableOpacity style={{paddingLeft: 118}} onPress={() => setIsPressed((isPressed) => !isPressed)} >
@@ -56,22 +57,67 @@ const ProductScreen = () => {
             <MaterialIcons name="delivery-dining" size={20} color="black" />
             <Text style={{paddingHorizontal: 5, fontSize: 14}}>{delivery}</Text>
         </View>
-      </View>
-      <View style={{flexDirection: 'row'}}>
-        <View style={{flexDirection: 'row', padding: 5, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10, marginLeft: 15, marginTop: 20, paddingHorizontal: 10}}>
-          <Pressable style={{paddingHorizontal: 5}}>
-            <Text style={{padding: 5, fontSize: 20}}>-</Text>
-          </Pressable>
-          <Text style={{padding: 5, fontSize: 20}}>1</Text>
-          <Pressable style={{padding: 5}}>
-            <Text style={{padding: 5, fontSize: 20}}>+</Text>
-          </Pressable>
+        <View style={{paddingHorizontal: 20}}>
+          <Text style={{fontWeight: '600', fontSize: 24}}>Extra</Text>
         </View>
-        <View style={{alignItems: 'center', justifyContent: 'center', marginLeft: 12, marginTop: 20}}>
-          <TouchableOpacity style={{backgroundColor: '#F49F1C', paddingHorizontal: 90, paddingVertical: 20, borderRadius: 10}} 
-            onPress={() => {}}>
-            <Text style={{fontSize: 16, fontWeight: '600', color: '#fff'}}>Add Item</Text>
-          </TouchableOpacity>
+        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingVertical: 10}}>
+          <View>
+            <Text style={{fontSize: 18}}>Rice</Text>
+          </View>
+          <View style={{borderWidth: 1, borderRadius: 50}}>
+            <Checkbox
+              status={checked ? 'checked' : 'unchecked'}
+              color='#F49F1C'
+              onPress={() => {
+              setChecked(!checked);
+              }}
+            />
+          </View>
+        </View>
+        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingVertical: 10}}>
+          <View>
+            <Text style={{fontSize: 18}}>Water Bottle</Text>
+          </View>
+          <View style={{borderWidth: 1, borderRadius: 50}}>
+            <Checkbox
+              status={checked ? 'checked' : 'unchecked'}
+              color='#F49F1C'
+              onPress={() => {
+              setChecked(!checked);
+              }}
+            />
+          </View>
+        </View>
+        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingVertical: 10}}>
+          <View>
+            <Text style={{fontSize: 18}}>Extra Eggs</Text>
+          </View>
+          <View style={{borderWidth: 1, borderRadius: 50}}>
+            <Checkbox
+              status={checked ? 'checked' : 'unchecked'}
+              color='#F49F1C'
+              onPress={() => {
+              setChecked(!checked);
+              }}
+            />
+          </View>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <View style={{flexDirection: 'row', padding: 5, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10, marginLeft: 15, marginTop: 20, paddingHorizontal: 10}}>
+            <Pressable style={{paddingHorizontal: 5}}>
+              <Text style={{padding: 5, fontSize: 20}}>-</Text>
+            </Pressable>
+            <Text style={{padding: 5, fontSize: 20}}>1</Text>
+            <Pressable style={{padding: 5}}>
+              <Text style={{padding: 5, fontSize: 20}}>+</Text>
+            </Pressable>
+          </View>
+          <View style={{alignItems: 'center', justifyContent: 'center', marginLeft: 12, marginTop: 20}}>
+            <TouchableOpacity style={{backgroundColor: '#F49F1C', paddingHorizontal: 90, paddingVertical: 20, borderRadius: 10}} 
+              onPress={() => {}}>
+              <Text style={{fontSize: 16, fontWeight: '600', color: '#fff'}}>Add Item</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </ScrollView>

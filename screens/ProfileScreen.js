@@ -132,49 +132,49 @@ const ProfileScreen = () => {
       <UserName>{user.email}</UserName>
     </UserNameView>
     <ProfileOptionButtonContainer>
-      <ProfileOptionButton>
+      <ProfileOptionButton onPress={() => navigation.navigate('Order')}>
         <SimpleLineIcons style={{paddingRight: 20}} name="handbag" size={24} color="#F49F1C" />
         <Text style={{textAlign: 'center', justifyContent: 'center', fontSize: 16, paddingTop: 4, fontWeight: 600, color: '#4B4B4B'}}>My Order</Text>
       </ProfileOptionButton>
     </ProfileOptionButtonContainer>
     <Divider />
     <ProfileOptionButtonContainer>
-      <ProfileOptionButton>
+      <ProfileOptionButton onPress={() => navigation.navigate('Wishlist')}>
         <Ionicons style={{paddingRight: 20}} name="heart-outline" size={24} color="#F49F1C" />
         <Text style={{textAlign: 'center', justifyContent: 'center', fontSize: 16, paddingTop: 4, fontWeight: 600, color: '#4B4B4B'}}>Wishlist</Text>
       </ProfileOptionButton>
     </ProfileOptionButtonContainer>
     <Divider />
     <ProfileOptionButtonContainer>
-      <ProfileOptionButton>
+      <ProfileOptionButton onPress={() => navigation.navigate('Coupons')}>
         <MaterialIcons style={{paddingRight: 20}} name="local-offer" size={24} color="#F49F1C" />
         <Text style={{textAlign: 'center', justifyContent: 'center', fontSize: 16, paddingTop: 4, fontWeight: 600, color: '#4B4B4B'}}>Coupons</Text>
       </ProfileOptionButton>
     </ProfileOptionButtonContainer>
     <Divider />
     <ProfileOptionButtonContainer>
-      <ProfileOptionButton>
+      <ProfileOptionButton onPress={() => navigation.navigate('Address')}>
         <Feather style={{paddingRight: 20}} name="map-pin" size={24} color="#F49F1C" />
         <Text style={{textAlign: 'center', justifyContent: 'center', fontSize: 16, paddingTop: 4, fontWeight: 600, color: '#4B4B4B'}}>Address</Text>
       </ProfileOptionButton>
     </ProfileOptionButtonContainer>
     <Divider />
     <ProfileOptionButtonContainer>
-      <ProfileOptionButton>
+      <ProfileOptionButton onPress={() => navigation.navigate('Payment')}>
         <MaterialIcons style={{paddingRight: 20}} name="account-balance-wallet" size={24} color="#F49F1C" />
         <Text style={{textAlign: 'center', justifyContent: 'center', fontSize: 16, paddingTop: 4, fontWeight: 600, color: '#4B4B4B'}}>Payment Method</Text>
       </ProfileOptionButton>
     </ProfileOptionButtonContainer>
     <Divider />
     <ProfileOptionButtonContainer>
-      <ProfileOptionButton>
+      <ProfileOptionButton onPress={() => navigation.navigate('TermsCondition')}>
         <Ionicons style={{paddingRight: 20}} name="ios-document-text-outline" size={24} color="#F49F1C" />
         <Text style={{textAlign: 'center', justifyContent: 'center', fontSize: 16, paddingTop: 4, fontWeight: 600, color: '#4B4B4B'}}>Terms & Condition</Text>
       </ProfileOptionButton>
     </ProfileOptionButtonContainer>
     <Divider />
     <ProfileOptionButtonContainer>
-      <ProfileOptionButton>
+      <ProfileOptionButton onPress={() => navigation.navigate('HelpCenter')}>
         <MaterialIcons style={{paddingRight: 20}} name="phone-in-talk" size={24} color="#F49F1C" />
         <Text style={{textAlign: 'center', justifyContent: 'center', fontSize: 16, paddingTop: 4, fontWeight: 600, color: '#4B4B4B'}}>Help Center</Text>
       </ProfileOptionButton>

@@ -23,6 +23,44 @@ import {
 import { TextInput } from 'react-native-paper';
 import { AuthenticationContext } from '../authentication/authentication.context';
 import { ActivityIndicator, MD2Colors  } from "react-native-paper";
+// import auth from '@react-native-firebase/auth';
+// import { GoogleSignin } from '@react-native-google-signin/google-signin';
+// import { LoginManager, AccessToken } from 'react-native-fbsdk-next';
+
+// async function onFacebookButtonPress() {
+//   // Attempt login with permissions
+//   const result = await LoginManager.logInWithPermissions(['public_profile', 'email']);
+
+//   if (result.isCancelled) {
+//     throw 'User cancelled the login process';
+//   }
+
+//   // Once signed in, get the users AccesToken
+//   const data = await AccessToken.getCurrentAccessToken();
+
+//   if (!data) {
+//     throw 'Something went wrong obtaining access token';
+//   }
+
+//   // Create a Firebase credential with the AccessToken
+//   const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
+
+//   // Sign-in the user with the credential
+//   return auth().signInWithCredential(facebookCredential);
+// }
+
+// async function onGoogleButtonPress() {
+//   // Check if your device supports Google Play
+//   await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+//   // Get the users ID token
+//   const { idToken } = await GoogleSignin.signIn();
+
+//   // Create a Google credential with the token
+//   const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+//   // Sign-in the user with the credential
+//   return auth().signInWithCredential(googleCredential);
+// }
 
 
 const Login = ({navigation}) => {
@@ -81,10 +119,10 @@ const Login = ({navigation}) => {
         {/* <TouchableOpacity onPress={() => {}}>
           <FontAwesome name="envelope" size={24} color="gray" />
         </TouchableOpacity> */}
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => onGoogleButtonPress().then(() => console.log('Signed in with Google!'))}>
           <Image  source={require('../assets/images/gmail.png')} />
         </TouchableOpacity>  
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => onFacebookButtonPress().then(() => console.log('Signed in with Facebook!'))}>
           <Image source={require('../assets/images/fb.png')} />
         </TouchableOpacity>  
       </SocialLoginView>

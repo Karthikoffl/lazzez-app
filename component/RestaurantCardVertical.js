@@ -41,7 +41,7 @@ const RestaurantCardVertical = ({
       <TouchableOpacity style={{position: 'absolute', left: 166, top: 100, zIndex: -1}} onPress={() => {}}>
           <Ionicons name="add-outline" size={30} color="#7B7A7A" />
       </TouchableOpacity>
-      <View style={{}}>
+      <View>
         <View style={{paddingTop: 10}}>
             <Text style={{fontWeight: 'bold', fontSize: 16}}>{title}</Text>
         </View>

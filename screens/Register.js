@@ -23,7 +23,7 @@ import {
   import { TextInput } from 'react-native-paper';
   import { AuthenticationContext } from '../authentication/authentication.context';
   import { ActivityIndicator, MD2Colors  } from "react-native-paper";
-
+  
 
 const Register = ({navigation}) => {
     const [email, setEmail] = useState("");
