@@ -59,7 +59,7 @@ const CartScreen = () => {
               onRefresh={onRefresh}
             />
           }>
-
+            
     </ScrollView>
     </SafeAreaView>
   );
