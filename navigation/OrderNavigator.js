@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 const OrderNavigator = () => {
   return (
     <Stack.Navigator>
-        <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="Order" component={OrderScreen} />
+        <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="OrderScreen" component={OrderScreen} />
         <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="OrderOverview" component={OrderOverviewScreen} />
     </Stack.Navigator>
   );

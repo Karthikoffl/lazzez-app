@@ -11,7 +11,7 @@ const CheckoutNavigation = () => {
     <Stack.Navigator>
         <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="Cart" component={CartScreen} />
         <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="CartItem" component={CartItem} />
-        <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="Checkout" component={CheckoutScreen} />
+        <Stack.Screen options={{ headerShown: false }} name="Checkout" component={CheckoutScreen} />
     </Stack.Navigator>
   );
 };
