@@ -29,6 +29,24 @@ const CartScreen = () => {
     {label: "Store Pickup", value: 1},
   ]
 
+  let [count, setCount] = useState(0);
+  function increment() {
+    //setCount(prevCount => prevCount+=1);
+    setCount(function (prevCount) {
+      return (prevCount += 1);
+    });
+  }
+
+  function decrement() {
+    setCount(function (prevCount) {
+      if (prevCount > 0) {
+        return (prevCount -= 1); 
+      } else {
+        return (prevCount = 0);
+      }
+    });
+  }
+
   const onRefresh = () => {
     //Clear old data of the list
     setDataSource([]);
@@ -98,13 +116,13 @@ const CartScreen = () => {
                     <Text style={{paddingHorizontal: 5, fontSize: 12}}>Free Delivery</Text>
                 </View>
                 <View style={{position: 'absolute', top: 95, left: 290}}>
-                <View style={{flexDirection: 'row', padding: 5, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10}}>
+                <View style={{flexDirection: 'row', padding: 5, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10, maxWidth: 65}}>
                   <Pressable style={{paddingHorizontal: 5}}>
-                    <Text style={{paddingRight: 3, fontSize: 16, fontWeight: '600'}}>-</Text>
+                    <Text style={{paddingRight: 3, fontSize: 16, fontWeight: '600'}} onPress={decrement}>-</Text>
                   </Pressable>
-                  <Text style={{fontSize: 16, fontWeight: '600'}}>1</Text>
+                  <Text style={{fontSize: 16, fontWeight: '600'}}>{count}</Text>
                   <Pressable>
-                    <Text style={{paddingLeft: 10, fontSize: 16, fontWeight: '600'}}>+</Text>
+                    <Text style={{paddingLeft: 10, fontSize: 16, fontWeight: '600'}} onPress={increment}>+</Text>
                   </Pressable>
                 </View>
                 </View>
@@ -138,13 +156,13 @@ const CartScreen = () => {
                     <Text style={{paddingHorizontal: 5, fontSize: 12}}>Free Delivery</Text>
                 </View>
                 <View style={{position: 'absolute', top: 95, left: 290}}>
-                <View style={{flexDirection: 'row', padding: 5, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10}}>
+                <View style={{flexDirection: 'row', padding: 5, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10, maxWidth: 65}}>
                   <Pressable style={{paddingHorizontal: 5}}>
-                    <Text style={{paddingRight: 3, fontSize: 16, fontWeight: '600'}}>-</Text>
+                    <Text style={{paddingRight: 3, fontSize: 16, fontWeight: '600'}} onPress={decrement}>-</Text>
                   </Pressable>
-                  <Text style={{fontSize: 16, fontWeight: '600'}}>1</Text>
+                  <Text style={{fontSize: 16, fontWeight: '600'}}>{count}</Text>
                   <Pressable>
-                    <Text style={{paddingLeft: 10, fontSize: 16, fontWeight: '600'}}>+</Text>
+                    <Text style={{paddingLeft: 10, fontSize: 16, fontWeight: '600'}} onPress={increment}>+</Text>
                   </Pressable>
                 </View>
                 </View>

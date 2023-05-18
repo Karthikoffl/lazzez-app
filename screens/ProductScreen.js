@@ -1,4 +1,4 @@
-import { View, Text, Image, ScrollView, TouchableOpacity, Pressable } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity, Pressable, TextInput } from 'react-native';
 import React, {useState} from 'react';
 import {useNavigation, useRoute } from '@react-navigation/native';
 import { Ionicons, MaterialIcons, FontAwesome } from '@expo/vector-icons';
@@ -18,6 +18,24 @@ const ProductScreen = () => {
       rating,
   },
 } = useRoute();
+
+  let [count, setCount] = useState(0);
+  function increment() {
+    //setCount(prevCount => prevCount+=1);
+    setCount(function (prevCount) {
+      return (prevCount += 1);
+    });
+  }
+
+  function decrement() {
+    setCount(function (prevCount) {
+      if (prevCount > 0) {
+        return (prevCount -= 1); 
+      } else {
+        return (prevCount = 0);
+      }
+    });
+  }
 
   return (
 
@@ -103,13 +121,14 @@ const ProductScreen = () => {
           </View>
         </View>
         <View style={{flexDirection: 'row'}}>
-          <View style={{flexDirection: 'row', padding: 5, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10, marginLeft: 15, marginTop: 20, paddingHorizontal: 10}}>
-            <Pressable style={{paddingHorizontal: 5}}>
-              <Text style={{padding: 5, fontSize: 20}}>-</Text>
+          <View 
+            style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10, marginLeft: 15, marginTop: 20, paddingHorizontal: 10, maxWidth: 100}}>
+            <Pressable style={{paddingHorizontal: 6}}>
+              <Text style={{padding: 5, fontSize: 20}} onPress={decrement}>-</Text>
             </Pressable>
-            <Text style={{padding: 5, fontSize: 20}}>1</Text>
-            <Pressable style={{padding: 5}}>
-              <Text style={{padding: 5, fontSize: 20}}>+</Text>
+            <Text>{count}</Text>
+            <Pressable style={{paddingHorizontal: 6}}>
+              <Text style={{padding: 5, fontSize: 20}} onPress={increment}>+</Text>
             </Pressable>
           </View>
           <View style={{alignItems: 'center', justifyContent: 'center', marginLeft: 12, marginTop: 20}}>
