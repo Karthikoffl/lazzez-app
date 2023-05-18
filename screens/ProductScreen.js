@@ -5,7 +5,6 @@ import { Ionicons, MaterialIcons, FontAwesome } from '@expo/vector-icons';
 import RadioForm from 'react-native-simple-radio-button';
 import IncrementRadio from '../component/IncrementRadio';
 
-
 const ProductScreen = () => {
   const navigation = useNavigation();
   const [isPressed, setIsPressed] = useState(false);
@@ -32,7 +31,6 @@ const ProductScreen = () => {
 } = useRoute();
 
   return (
-
     <ScrollView>
       <View style={{position: 'relative'}}>
         <Image 
