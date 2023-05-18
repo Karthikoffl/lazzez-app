@@ -1,13 +1,21 @@
-import { View, Text, Image, ScrollView, TouchableOpacity, Pressable, TextInput } from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity, Pressable, TextInput, StyleSheet } from 'react-native';
 import React, {useState} from 'react';
 import {useNavigation, useRoute } from '@react-navigation/native';
 import { Ionicons, MaterialIcons, FontAwesome } from '@expo/vector-icons';
-import { Checkbox } from 'react-native-paper';
+import RadioForm from 'react-native-simple-radio-button';
+
 
 const ProductScreen = () => {
   const navigation = useNavigation();
-  const [checked, setChecked] = React.useState(false);
   const [isPressed, setIsPressed] = useState(false);
+  const [selected, setSelected] = useState(false);
+
+  const [value, setValue] = useState(0);
+  const extras = [
+    {label: "Extra Eggs", value: 0},
+    {label: "Spices", value: 1},
+    {label: "Mid Fries", value: 2},
+  ]
 
   const {
     params: {
@@ -73,58 +81,47 @@ const ProductScreen = () => {
         <View style={{padding: 20, paddingTop: 5, flexDirection: 'row', alignItems: 'center'}}>
           <Text>Lorem ipsum dolor sit amet, consectetur adipiscing. Nunc eleifend metus pulvinar mattis.Lorem ipsum dolor sit amet, consectetur adipiscing.</Text>
         </View>
-        <View style={{paddingLeft: 20, paddingBottom: 40, flexDirection: 'row', alignItems: 'center'}}>
-            <MaterialIcons name="delivery-dining" size={20} color="black" />
-            <Text style={{paddingHorizontal: 5, fontSize: 14}}>{delivery}</Text>
-        </View>
         <View style={{paddingHorizontal: 20}}>
-          <Text style={{fontWeight: '600', fontSize: 24}}>Extra</Text>
+          <Text style={{fontWeight: '600', fontSize: 22}}>Extra</Text>
         </View>
-        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingVertical: 10}}>
-          <View>
-            <Text style={{fontSize: 18}}>Rice</Text>
-          </View>
-          <View style={{borderWidth: 1, borderRadius: 50}}>
-            <Checkbox
-              status={checked ? 'checked' : 'unchecked'}
-              color='#F49F1C'
-              onPress={() => {
-              setChecked(!checked);
-              }}
-            />
-          </View>
+        <View style={{marginLeft: 18, marginTop: 10}}>
+          <RadioForm 
+              radio_props={extras} 
+              initial={value} 
+              selectedButtonColor={'#F49F1C'} 
+              buttonColor={'#4B4B4B'} 
+              buttonSize={10} 
+              onPress={() => {}} 
+          />
         </View>
-        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingVertical: 10}}>
-          <View>
-            <Text style={{fontSize: 18}}>Water Bottle</Text>
-          </View>
-          <View style={{borderWidth: 1, borderRadius: 50}}>
-            <Checkbox
-              status={checked ? 'checked' : 'unchecked'}
-              color='#F49F1C'
-              onPress={() => {
-              setChecked(!checked);
-              }}
-            />
-          </View>
+        <View style={{paddingHorizontal: 20, paddingTop: 20}}>
+          <Text style={{fontWeight: '600', fontSize: 22}}>Addons</Text>
         </View>
-        <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingVertical: 10}}>
-          <View>
-            <Text style={{fontSize: 18}}>Extra Eggs</Text>
-          </View>
-          <View style={{borderWidth: 1, borderRadius: 50}}>
-            <Checkbox
-              status={checked ? 'checked' : 'unchecked'}
-              color='#F49F1C'
-              onPress={() => {
-              setChecked(!checked);
-              }}
-            />
-          </View>
+        <View style={{flexDirection: 'row', padding: 10}}>
+          <TouchableOpacity onPress={() => setSelected((selected) => !selected)} style={{paddingHorizontal: 10}}>
+            <View style={styles.inActiveAddon}>
+              <Text style={styles.inActiveText}>Cheese</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setSelected((selected) => !selected)} style={{paddingHorizontal: 10}}>
+            <View style={styles.inActiveAddon}>
+              <Text style={styles.inActiveText}>Coke</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setSelected((selected) => !selected)} style={{paddingHorizontal: 10}}>
+            <View style={styles.inActiveAddon}>
+              <Text style={styles.inActiveText}>Water</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={{marginLeft: 20, marginTop: 20, flexDirection: 'row'}}>
+          <Text style={{fontSize: 16, fontWeight: '800'}}>Total Amount: </Text>
+          <Text style={{fontSize: 16, fontWeight: '800', color: '#F49F1C'}}>₹350</Text>
         </View>
         <View style={{flexDirection: 'row'}}>
-          <View 
-            style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10, marginLeft: 15, marginTop: 20, paddingHorizontal: 10, maxWidth: 100}}>
+          <View
+            style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10, marginLeft: 15, marginTop: 20, paddingHorizontal: 10, maxWidth: 100}}
+            >
             <Pressable style={{paddingHorizontal: 6}}>
               <Text style={{padding: 5, fontSize: 20}} onPress={decrement}>-</Text>
             </Pressable>
@@ -149,3 +146,30 @@ const ProductScreen = () => {
 };
 
 export default ProductScreen
+
+const styles = StyleSheet.create({
+  activeAddon: {
+    height: 70, 
+    width: 80, 
+    backgroundColor: '#F49F1C', 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    borderRadius: 5,
+  },
+  inActiveAddon: {
+    height: 70, 
+    width: 80, 
+    backgroundColor: 'rgba(244, 159, 28, 0.2)', 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    borderRadius: 5,
+  },
+  activeText: {
+    color: '#FFF',
+    fontWeight: '600',
+  },
+  inActiveText: {
+    color: '#000',
+    fontWeight: '600',
+  },
+});

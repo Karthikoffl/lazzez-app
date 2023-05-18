@@ -17,9 +17,9 @@ const VerticalCard = ({id, title, button}) => {
         <ScrollView
           contentContainerStyle={{paddingHorizontal: 10}}
           showVerticalScrollIndicator={false}
-          style={{padding: 4, marginTop: 15}}
+          style={{padding: 4, marginTop: 5}}
         >
-            <View style={{paddingVertical: 10}}>
+            <View style={{paddingVertical: 5}}>
                 <RestaurantCardVertical 
                     id={0}
                     image={require('../assets/images/food.png')}
@@ -28,7 +28,7 @@ const VerticalCard = ({id, title, button}) => {
                     delivery='Free Delivery'
                 />
             </View>
-            <View style={{paddingVertical: 10}}>
+            <View style={{paddingVertical: 5}}>
                 <RestaurantCardVertical 
                     id={0}
                     image={require('../assets/images/food.png')}
@@ -37,7 +37,7 @@ const VerticalCard = ({id, title, button}) => {
                     delivery='Free Delivery'
                 />
             </View>
-            <View style={{paddingVertical: 10}}>
+            <View style={{paddingVertical: 5}}>
                 <RestaurantCardVertical 
                     id={0}
                     image={require('../assets/images/food.png')}
@@ -46,7 +46,7 @@ const VerticalCard = ({id, title, button}) => {
                     delivery='Free Delivery'
                 />
             </View>
-            <View style={{paddingVertical: 10}}>
+            <View style={{paddingVertical: 5}}>
                 <RestaurantCardVertical 
                     id={0}
                     image={require('../assets/images/food.png')}

@@ -25,9 +25,9 @@ const FoodCard = ({id, title, button}) => {
         </View>
         <ScrollView
           horizontal
-          contentContainerStyle={{paddingHorizontal: 15,}}
+          contentContainerStyle={{paddingHorizontal: 15}}
           showsHorizontalScrollIndicator={false}
-          style={{paddingTop: 4, marginTop: 15}}
+          style={{paddingTop: 4, marginTop: 10}}
         >
           <View style={{paddingHorizontal: 7}}>
             <RestaurantCard 

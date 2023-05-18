@@ -17,7 +17,7 @@ const ProfileNavigator = () => {
         <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="ProfileScreen" component={ProfileScreen} />
         <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="Camera" component={CameraScreen} />
         <Stack.Screen options={{headerShown: false }} name="Wishlist" component={WishlistScreen} />
-        <Stack.Screen options={{headerShown: false }} name="Coupons" component={CouponScreen} />
+        <Stack.Screen name="Coupons" component={CouponScreen} />
         <Stack.Screen options={{headerShown: false }} name="Address" component={AddressScreen} />
         <Stack.Screen options={{headerShown: false }} name="Payment" component={PaymentScreen} />
         <Stack.Screen options={{headerShown: false }} name="TermsCondition" component={TermsConditionScreen} />
