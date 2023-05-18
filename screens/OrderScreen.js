@@ -63,7 +63,9 @@ const OrderScreen = () => {
           }>
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
               <Pressable style={{height: 140, width: '93%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2, marginBottom: 10, marginTop: 20}}>
-                <TouchableOpacity onPress={() => {}}>
+                <TouchableOpacity 
+                  onPress={() => {}}
+                >
                   <View style={{position: 'absolute', top: 5, left: 333}}>
                     <MaterialIcons name="cancel" size={24} color="#F49F1C" />
                   </View>
@@ -90,7 +92,10 @@ const OrderScreen = () => {
               </Pressable>
             </View>
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Pressable style={{height: 140, width: '93%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2}}>
+              <Pressable 
+                style={{height: 140, width: '93%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2}}
+                onPress={() => {}}  
+              >
                 <View style={{paddingHorizontal: 10, paddingVertical: 10}}>
                   <Image style={{height: 120, width: 140, borderRadius: 10}} source={require('../assets/images/food.png')}/>
                   <View style={{position: 'absolute', top: 15, left: 160}}>

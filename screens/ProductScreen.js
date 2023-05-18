@@ -21,7 +21,6 @@ const ProductScreen = () => {
 
   let [count, setCount] = useState(0);
   function increment() {
-    //setCount(prevCount => prevCount+=1);
     setCount(function (prevCount) {
       return (prevCount += 1);
     });
@@ -55,7 +54,10 @@ const ProductScreen = () => {
       <View style={{backgroundColor: '#fff', height: '100%'}}>
         <View style={{flexDirection: 'row', paddingHorizontal: 15, paddingTop: 30}}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>{title}</Text>
-          <TouchableOpacity style={{paddingLeft: 118}} onPress={() => setIsPressed((isPressed) => !isPressed)} >
+          <TouchableOpacity 
+            style={{paddingLeft: 118}} 
+            onPress={() => setIsPressed((isPressed) => !isPressed)}
+          >
             <MaterialIcons name={!isPressed ? "favorite-border" : "favorite"} size={30} color="#F49F1C" />
           </TouchableOpacity>         
         </View>
@@ -132,8 +134,10 @@ const ProductScreen = () => {
             </Pressable>
           </View>
           <View style={{alignItems: 'center', justifyContent: 'center', marginLeft: 12, marginTop: 20}}>
-            <TouchableOpacity style={{backgroundColor: '#F49F1C', paddingHorizontal: 90, paddingVertical: 20, borderRadius: 10}} 
-              onPress={() => {}}>
+            <TouchableOpacity 
+              style={{backgroundColor: '#F49F1C', paddingHorizontal: 90, paddingVertical: 20, borderRadius: 10}} 
+              onPress={() => {}}
+            >
               <Text style={{fontSize: 16, fontWeight: '600', color: '#fff'}}>Add Item</Text>
             </TouchableOpacity>
           </View>
