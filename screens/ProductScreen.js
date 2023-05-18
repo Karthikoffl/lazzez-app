@@ -3,12 +3,16 @@ import React, {useState} from 'react';
 import {useNavigation, useRoute } from '@react-navigation/native';
 import { Ionicons, MaterialIcons, FontAwesome } from '@expo/vector-icons';
 import RadioForm from 'react-native-simple-radio-button';
+import IncrementRadio from '../component/IncrementRadio';
 
 
 const ProductScreen = () => {
   const navigation = useNavigation();
   const [isPressed, setIsPressed] = useState(false);
   const [selected, setSelected] = useState(false);
+  const [selected1, setSelected1] = useState(false);
+  const [selected2, setSelected2] = useState(false);
+
 
   const [value, setValue] = useState(0);
   const extras = [
@@ -27,23 +31,6 @@ const ProductScreen = () => {
   },
 } = useRoute();
 
-  let [count, setCount] = useState(0);
-  function increment() {
-    setCount(function (prevCount) {
-      return (prevCount += 1);
-    });
-  }
-
-  function decrement() {
-    setCount(function (prevCount) {
-      if (prevCount > 0) {
-        return (prevCount -= 1); 
-      } else {
-        return (prevCount = 0);
-      }
-    });
-  }
-
   return (
 
     <ScrollView>
@@ -59,7 +46,7 @@ const ProductScreen = () => {
           <Ionicons name="arrow-back-outline" size={30} color="black" />
         </TouchableOpacity>
       </View>
-      <View style={{backgroundColor: '#fff', height: '100%'}}>
+      <View style={{backgroundColor: '#fff', height: '100%', marginBottom: 30}}>
         <View style={{flexDirection: 'row', paddingHorizontal: 15, paddingTop: 30}}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>{title}</Text>
           <TouchableOpacity 
@@ -89,7 +76,7 @@ const ProductScreen = () => {
               radio_props={extras} 
               initial={value} 
               selectedButtonColor={'#F49F1C'} 
-              buttonColor={'#4B4B4B'} 
+              buttonColor={'#CFD1DD'}
               buttonSize={10} 
               onPress={() => {}} 
           />
@@ -99,19 +86,40 @@ const ProductScreen = () => {
         </View>
         <View style={{flexDirection: 'row', padding: 10}}>
           <TouchableOpacity onPress={() => setSelected((selected) => !selected)} style={{paddingHorizontal: 10}}>
-            <View style={styles.inActiveAddon}>
-              <Text style={styles.inActiveText}>Cheese</Text>
-            </View>
+            {!selected ? 
+              <View style={styles.inActiveAddon}>
+                <Text style={styles.inActiveText}>Cheese</Text>
+              </View> : 
+              <View style={styles.activeAddon}>
+                <Text style={styles.activeText}>Cheese</Text>
+                <View style={{position: 'absolute', top: 35, left: -15}}>
+                  <IncrementRadio />
+                </View>
+              </View>}
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setSelected((selected) => !selected)} style={{paddingHorizontal: 10}}>
-            <View style={styles.inActiveAddon}>
-              <Text style={styles.inActiveText}>Coke</Text>
-            </View>
+          <TouchableOpacity onPress={() => setSelected1((selected1) => !selected1)} style={{paddingHorizontal: 10}}>
+          {!selected1 ? 
+              <View style={styles.inActiveAddon}>
+                <Text style={styles.inActiveText}>Coke</Text>
+              </View> : 
+              <View style={styles.activeAddon}>
+                <Text style={styles.activeText}>Coke</Text>
+                <View style={{position: 'absolute', top: 35, left: -15}}>
+                  <IncrementRadio />
+                </View>
+              </View>}
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setSelected((selected) => !selected)} style={{paddingHorizontal: 10}}>
-            <View style={styles.inActiveAddon}>
-              <Text style={styles.inActiveText}>Water</Text>
-            </View>
+          <TouchableOpacity onPress={() => setSelected2((selected2) => !selected2)} style={{paddingHorizontal: 10}}>
+          {!selected2 ? 
+              <View style={styles.inActiveAddon}>
+                <Text style={styles.inActiveText}>Water</Text>
+              </View> : 
+              <View style={styles.activeAddon}>
+                <Text style={styles.activeText}>Water</Text>
+                <View style={{position: 'absolute', top: 35, left: -15}}>
+                  <IncrementRadio />
+                </View>
+              </View>}
           </TouchableOpacity>
         </View>
         <View style={{marginLeft: 20, marginTop: 20, flexDirection: 'row'}}>
@@ -119,20 +127,10 @@ const ProductScreen = () => {
           <Text style={{fontSize: 16, fontWeight: '800', color: '#F49F1C'}}>₹350</Text>
         </View>
         <View style={{flexDirection: 'row'}}>
-          <View
-            style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10, marginLeft: 15, marginTop: 20, paddingHorizontal: 10, maxWidth: 100}}
-            >
-            <Pressable style={{paddingHorizontal: 6}}>
-              <Text style={{padding: 5, fontSize: 20}} onPress={decrement}>-</Text>
-            </Pressable>
-            <Text>{count}</Text>
-            <Pressable style={{paddingHorizontal: 6}}>
-              <Text style={{padding: 5, fontSize: 20}} onPress={increment}>+</Text>
-            </Pressable>
-          </View>
+          <IncrementRadio />
           <View style={{alignItems: 'center', justifyContent: 'center', marginLeft: 12, marginTop: 20}}>
             <TouchableOpacity 
-              style={{backgroundColor: '#F49F1C', paddingHorizontal: 90, paddingVertical: 20, borderRadius: 10}} 
+              style={{backgroundColor: '#F49F1C', paddingHorizontal: 100, paddingVertical: 20, borderRadius: 10}} 
               onPress={() => {}}
             >
               <Text style={{fontSize: 16, fontWeight: '600', color: '#fff'}}>Add Item</Text>

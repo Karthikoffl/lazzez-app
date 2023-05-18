@@ -16,6 +16,7 @@ import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { Surface } from 'react-native-paper';
 import RadioForm from 'react-native-simple-radio-button';
 import DashedLine from 'react-native-dashed-line';
+import IncrementRadio from '../component/IncrementRadio';
 
 
 const CartScreen = () => {
@@ -28,23 +29,6 @@ const CartScreen = () => {
     {label: "Home Delivery", value: 0},
     {label: "Store Pickup", value: 1},
   ]
-
-  let [count, setCount] = useState(0);
-  function increment() {
-    setCount(function (prevCount) {
-      return (prevCount += 1);
-    });
-  }
-
-  function decrement() {
-    setCount(function (prevCount) {
-      if (prevCount > 0) {
-        return (prevCount -= 1); 
-      } else {
-        return (prevCount = 0);
-      }
-    });
-  }
 
   const onRefresh = () => {
     //Clear old data of the list
@@ -89,7 +73,7 @@ const CartScreen = () => {
             />
           }>
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Pressable style={{height: 140, width: '93%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2, marginVertical: 20}}>
+              <Pressable style={{height: 140, width: '93%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2, marginTop: 20, marginBottom: 20}}>
                 <TouchableOpacity onPress={() => {}}>
                   <View style={{position: 'absolute', top: 5, left: 333}}>
                     <MaterialIcons name="cancel" size={24} color="#F49F1C" />
@@ -110,26 +94,14 @@ const CartScreen = () => {
                 <View style={{position: 'absolute', top: 70, left: 165}}>
                   <Text style={{fontSize: 18, fontWeight: '600', color: '#4B4B4B'}}>₹ 350</Text>
                 </View>
-                <View style={{top: -45, left: 153, flexDirection: 'row'}}>
-                    <MaterialIcons name="delivery-dining" size={16} color="black" />
-                    <Text style={{paddingHorizontal: 5, fontSize: 12}}>Free Delivery</Text>
-                </View>
-                <View style={{position: 'absolute', top: 95, left: 290}}>
-                <View style={{flexDirection: 'row', padding: 5, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10, maxWidth: 65}}>
-                  <Pressable style={{paddingHorizontal: 5}}>
-                    <Text style={{paddingRight: 3, fontSize: 16, fontWeight: '600'}} onPress={decrement}>-</Text>
-                  </Pressable>
-                  <Text style={{fontSize: 16, fontWeight: '600'}}>{count}</Text>
-                  <Pressable>
-                    <Text style={{paddingLeft: 10, fontSize: 16, fontWeight: '600'}} onPress={increment}>+</Text>
-                  </Pressable>
-                </View>
+                <View style={{position: 'absolute', top: 75, left: 245}}>
+                <IncrementRadio />
                 </View>
                 </View>
               </Pressable>
             </View>
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Pressable style={{height: 140, width: '93%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2, marginVertical: 20}}>
+              <Pressable style={{height: 140, width: '93%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2, marginBottom: 20}}>
                 <TouchableOpacity onPress={() => {}}>
                   <View style={{position: 'absolute', top: 5, left: 333}}>
                     <MaterialIcons name="cancel" size={24} color="#F49F1C" />
@@ -150,20 +122,8 @@ const CartScreen = () => {
                 <View style={{position: 'absolute', top: 70, left: 165}}>
                   <Text style={{fontSize: 18, fontWeight: '600', color: '#4B4B4B'}}>₹ 350</Text>
                 </View>
-                <View style={{top: -45, left: 153, flexDirection: 'row'}}>
-                    <MaterialIcons name="delivery-dining" size={16} color="black" />
-                    <Text style={{paddingHorizontal: 5, fontSize: 12}}>Free Delivery</Text>
-                </View>
-                <View style={{position: 'absolute', top: 95, left: 290}}>
-                <View style={{flexDirection: 'row', padding: 5, alignItems: 'center', justifyContent: 'center', borderWidth: 1, borderColor: '#F49F1C', backgroundColor: '#fcddac', borderRadius: 10, maxWidth: 65}}>
-                  <Pressable style={{paddingHorizontal: 5}}>
-                    <Text style={{paddingRight: 3, fontSize: 16, fontWeight: '600'}} onPress={decrement}>-</Text>
-                  </Pressable>
-                  <Text style={{fontSize: 16, fontWeight: '600'}}>{count}</Text>
-                  <Pressable>
-                    <Text style={{paddingLeft: 10, fontSize: 16, fontWeight: '600'}} onPress={increment}>+</Text>
-                  </Pressable>
-                </View>
+                <View style={{position: 'absolute', top: 75, left: 245}}>
+                  <IncrementRadio />
                 </View>
                 </View>
               </Pressable>
@@ -189,7 +149,7 @@ const CartScreen = () => {
                     radio_props={items} 
                     initial={value} 
                     selectedButtonColor={'#F49F1C'} 
-                    buttonColor={'#4B4B4B'} 
+                    buttonColor={'#CFD1DD'}
                     buttonSize={12} 
                     onPress={() => {}} 
                   />
