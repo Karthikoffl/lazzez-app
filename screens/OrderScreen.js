@@ -62,7 +62,7 @@ const OrderScreen = () => {
             />
           }>
             <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Pressable style={{height: 140, width: '93%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2, marginVertical: 20}}>
+              <Pressable style={{height: 140, width: '93%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2, marginBottom: 10, marginTop: 20}}>
                 <TouchableOpacity onPress={() => {}}>
                   <View style={{position: 'absolute', top: 5, left: 333}}>
                     <MaterialIcons name="cancel" size={24} color="#F49F1C" />

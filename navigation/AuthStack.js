@@ -12,9 +12,9 @@ export const AuthStack = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="OnboardingScreen" component={OnBoardingScreen} />
-            <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="PersonalInfo" component={PersonalInfo} />
             <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="AllowLocation" component={AllowLocation} />
             <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="AllowNotify" component={AllowNotify} />
+            <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="PersonalInfo" component={PersonalInfo} />
             <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="Login" component={Login} />
             <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="Register" component={Register} />
         </Stack.Navigator>

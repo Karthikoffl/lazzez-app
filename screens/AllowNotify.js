@@ -71,7 +71,7 @@ const AllowNotify = () => {
             />
             <LoginButton 
               onPress={() => {
-                navigation.navigate('Login')
+                navigation.navigate('PersonalInfo')
               }
               }
               >

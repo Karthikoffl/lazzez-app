@@ -1,48 +1,54 @@
-import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import React from 'react';
 import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
-
+import { useNavigation } from '@react-navigation/native';
+import MultiStep1 from '../component/MultiStep1';
+import MultiStep2 from '../component/MultiStep2';
+import MultiStep3 from '../component/MultiStep3';
 
 const CheckoutScreen = () => {
+  const navigation = useNavigation();
 
     const progressStepStyle={
       activeStepIconBorderColor: '#4B4B4B',
       activeLabelColor: '#000',
       labelColor: '#000',
+      labelFontSize: '10',
       completedProgressBarColor: '#F49F1C',
       completedCheckColor: '#fff',
-      completedStepIconColor: '#F49F1C'
+      completedStepIconColor: '#F49F1C',
+      borderWidth: '3px',
+      borderStyle: 'DashedLine',
     }
 
     defaultScrollViewProps = {
       keyboardShouldPersistTaps: 'handled',
-      contentContainerStyle: {
-        flex: 1,
-        justifyContent: 'center'
-      }
     };
 
+    onSubmitSteps = () => {
+      navigation.navigate('Home');
+    }
+
   return (
-    <SafeAreaView >
-      <View style={{flex: 1}}>
+      <SafeAreaView style={{flex: 1}}>
         <ProgressSteps {...progressStepStyle}>
-            <ProgressStep label="Delivery Address" scrollViewProps={this.defaultScrollViewProps}>
-                <View style={{ alignItems: 'center' }}>
-                    <Text>Select Delivery Address</Text>
-                </View>
+            <ProgressStep 
+              label="Delivery Address" 
+              scrollViewProps={this.defaultScrollViewProps}>
+                <MultiStep1 />
             </ProgressStep>
-            <ProgressStep label="Payment Method" scrollViewProps={this.defaultScrollViewProps}>
-                <View style={{ alignItems: 'center' }}>
-                    <Text>Choose Payment Method</Text>
-                </View>
+            <ProgressStep 
+              label="Payment Method" 
+              scrollViewProps={this.defaultScrollViewProps}>
+                <MultiStep2 />
             </ProgressStep>
-            <ProgressStep label="Finish" scrollViewProps={this.defaultScrollViewProps}>
-                <View style={{ alignItems: 'center' }}>
-                    <Text>Your Order Placed</Text>
-                </View>
+            <ProgressStep 
+              label="Finish" 
+              scrollViewProps={this.defaultScrollViewProps} 
+              onSubmit={this.onSubmitSteps}>
+                <MultiStep3 />
             </ProgressStep>
         </ProgressSteps>
-    </View>
     </SafeAreaView>
   );
 };

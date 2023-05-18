@@ -75,7 +75,7 @@ const OnBoardingScreen = ({navigation}) => {
         renderSkipButton={() => buttonLabel("Skip")}
         renderDoneButton={() => buttonLabel("Done")}
         onDone={() => {
-          navigation.navigate('Login');
+          navigation.navigate('AllowLocation');
         }}
       />
 

@@ -66,7 +66,7 @@ const PersonalInfo = ({navigation}) => {
               />
             <LoginButton 
               onPress={() => {
-                navigation.navigate('AllowLocation')
+                navigation.navigate('Login')
               }
               }
               >
