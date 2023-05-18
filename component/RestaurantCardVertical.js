@@ -34,7 +34,7 @@ const RestaurantCardVertical = ({
             rating,
             delivery,
           }),
-          handlePresentModal
+          handlePresentModal;
         }}
     >
       <View style={{flexDirection: 'row', width: 150}}>
