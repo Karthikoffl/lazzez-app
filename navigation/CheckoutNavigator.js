@@ -8,7 +8,7 @@ import OrderFailed from '../screens/OrderFailed';
 
 const Stack = createNativeStackNavigator();
 
-const CheckoutNavigation = () => {
+const CheckoutNavigator = () => {
   return (
     <Stack.Navigator>
         <Stack.Screen options={{gestureEnabled: false, headerShown: false }} name="Cart" component={CartScreen} />
@@ -20,4 +20,4 @@ const CheckoutNavigation = () => {
   );
 };
 
-export default CheckoutNavigation;
+export default CheckoutNavigator;

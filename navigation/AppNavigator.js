@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Entypo, Ionicons, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
 import ProfileNavigator from './ProfileNavigator';
-import CheckoutNavigation from './CheckoutNavigation';
+import CheckoutNavigator from './CheckoutNavigator';
 import OrderNavigator from './OrderNavigator';
 import HomeNavigator from './HomeNavigator';
 
@@ -14,7 +14,7 @@ const BottomNav = () => {
         <Tab.Screen name="Home" component={HomeNavigator} options={{headerShown: false, tabBarIcon: ({color, size}) => (
             <Entypo name="home" size={size} color={color} />
   )}}/>
-        <Tab.Screen name="Cart" component={CheckoutNavigation} options={{headerShown: false, tabBarIcon: ({color, size}) => (
+        <Tab.Screen name="Cart" component={CheckoutNavigator} options={{headerShown: false, tabBarIcon: ({color, size}) => (
             <Ionicons name="cart" size={size} color={color} />
   )}} />
         <Tab.Screen name="Order" component={OrderNavigator} options={{headerShown: false, tabBarIcon: ({color, size}) => (
