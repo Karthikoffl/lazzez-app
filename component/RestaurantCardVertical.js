@@ -1,10 +1,8 @@
 import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native';
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState} from 'react';
 import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-// import Currency from 'react-currency-formatter';
 import "react-native-gesture-handler";
-import BottomSheet, { BottomSheetScrollView } from "@gorhom/bottom-sheet";
 
 const RestaurantCardVertical = ({
     id,
@@ -15,13 +13,6 @@ const RestaurantCardVertical = ({
 }) => {
   const [isPressed, setIsPressed] = useState(false);
   const navigation = useNavigation();
-  const bottomSheetModelRef = useRef(null);
-
-  const snapPoints = ['48%'];
-
-  function handlePresentModal() {
-    bottomSheetModelRef.current?.present();
-  }
 
   return (
     <Pressable 
@@ -33,8 +24,7 @@ const RestaurantCardVertical = ({
             title,
             rating,
             delivery,
-          }),
-          handlePresentModal;
+          })
         }}
     >
       <View style={{flexDirection: 'row', width: 150}}>
