@@ -1,1 +1,1 @@
-# lazzez-app
+# lazeez-app
