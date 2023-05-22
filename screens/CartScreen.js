@@ -94,34 +94,6 @@ const CartScreen = () => {
                 </View>
               </Pressable>
             </View>
-            <View style={{alignItems: 'center', justifyContent: 'center'}}>
-              <Pressable style={{height: 140, width: '93%', backgroundColor: '#fff', borderRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2, marginBottom: 20}}>
-                <TouchableOpacity onPress={() => {}}>
-                  <View style={{position: 'absolute', top: 5, left: 333}}>
-                    <MaterialIcons name="cancel" size={24} color="#F49F1C" />
-                  </View>
-                </TouchableOpacity>
-                <View style={{paddingHorizontal: 10, paddingVertical: 10}}>
-                  <Image style={{height: 120, width: 140, borderRadius: 10}} source={require('../assets/images/food.png')}/>
-                  <View style={{position: 'absolute', top: 15, left: 160}}>
-                    <Text style={{fontSize: 16, fontWeight: '600'}}>Tasty Pakistani Dish</Text>
-                  </View>
-                  <View style={{top: -90, left: 150, flexDirection: 'row'}}>
-                    <FontAwesome style={{padding: 1.5}} name="star" size={15} color="#F49F1C" />
-                    <FontAwesome style={{padding: 1.5}} name="star" size={15} color="#F49F1C" />
-                    <FontAwesome style={{padding: 1.5}} name="star" size={15} color="#F49F1C" />
-                    <FontAwesome style={{padding: 1.5}} name="star" size={15} color="#F49F1C" />
-                    <FontAwesome style={{padding: 1.5}} name="star" size={15} color="#B0B3C2" />    
-                </View>
-                <View style={{position: 'absolute', top: 70, left: 165}}>
-                  <Text style={{fontSize: 18, fontWeight: '600', color: '#4B4B4B'}}>₹ 350</Text>
-                </View>
-                <View style={{position: 'absolute', top: 75, left: 245}}>
-                  <IncrementRadio />
-                </View>
-                </View>
-              </Pressable>
-            </View>
               <View style={{flexDirection: 'row', paddingHorizontal: 20}}>
                 <TextInput 
                   style={{height: 50, width: '65%', borderTopLeftRadius: 10, borderBottomLeftRadius: 10, padding: 15, shadowColor: '#171717', shadowOpacity: 0.2}}
