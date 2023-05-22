@@ -14,6 +14,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AuthenticationContext } from '../authentication/authentication.context';
 import { Feather, SimpleLineIcons, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import styled from "styled-components/native";
+import { Linking } from 'react-native';
 
 const UserNameView = styled.View`
   alignItems: center;
@@ -174,7 +175,7 @@ const ProfileScreen = () => {
     </ProfileOptionButtonContainer>
     <Divider />
     <ProfileOptionButtonContainer>
-      <ProfileOptionButton onPress={() => navigation.navigate('HelpCenter')}>
+      <ProfileOptionButton onPress={() => Linking.openURL(`tel:$+917904156641`)}>
         <MaterialIcons style={{paddingRight: 20}} name="phone-in-talk" size={24} color="#F49F1C" />
         <Text style={{textAlign: 'center', justifyContent: 'center', fontSize: 16, paddingTop: 4, fontWeight: 600, color: '#4B4B4B'}}>Help Center</Text>
       </ProfileOptionButton>

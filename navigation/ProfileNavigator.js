@@ -7,7 +7,6 @@ import CouponScreen from '../screens/CouponScreen';
 import AddressScreen from '../screens/AddressScreen';
 import PaymentScreen from '../screens/PaymentScreen';
 import TermsConditionScreen from '../screens/TermsConditionScreen';
-import HelpCenterScreen from '../screens/HelpCenterScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,7 +20,6 @@ const ProfileNavigator = () => {
         <Stack.Screen options={{headerShown: false }} name="Address" component={AddressScreen} />
         <Stack.Screen options={{headerShown: false }} name="Payment" component={PaymentScreen} />
         <Stack.Screen options={{headerShown: false }} name="TermsCondition" component={TermsConditionScreen} />
-        <Stack.Screen options={{headerShown: false }} name="HelpCenter" component={HelpCenterScreen} />
     </Stack.Navigator>
   );
 };
