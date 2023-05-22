@@ -124,13 +124,13 @@ const CartScreen = () => {
             </View>
               <View style={{flexDirection: 'row', paddingHorizontal: 20}}>
                 <TextInput 
-                  style={{height: 50, width: '80%', borderTopLeftRadius: 10, borderBottomLeftRadius: 10, padding: 15, shadowColor: '#171717', shadowOpacity: 0.2}}
+                  style={{height: 50, width: '65%', borderTopLeftRadius: 10, borderBottomLeftRadius: 10, padding: 15, shadowColor: '#171717', shadowOpacity: 0.2}}
                   placeholder="Enter Promo Code"
                   backgroundColor="white"
                   maxLength={5}
                 />
                 <TouchableOpacity 
-                  style={{height: 50, width: 70, backgroundColor: '#F49F1C', alignItems: 'center', justifyContent: 'center', borderTopRightRadius: 10, borderBottomRightRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2}}
+                  style={{height: 50, width: 125, backgroundColor: '#F49F1C', alignItems: 'center', justifyContent: 'center', borderTopRightRadius: 10, borderBottomRightRadius: 10, shadowColor: '#171717', shadowOpacity: 0.2}}
                   onPress={() => {}}
                   >
                   <Text style={{fontSize: 16, fontWeight: '600', color: '#fff'}}>Apply</Text>
