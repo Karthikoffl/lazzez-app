@@ -5,7 +5,8 @@ import {
   TouchableOpacity, 
   StyleSheet, 
   ScrollView, 
-  RefreshControl 
+  RefreshControl,
+  Linking
 } from 'react-native';
 import React, {
   useState, 
@@ -30,7 +31,6 @@ import {
   MaterialIcons 
 } from '@expo/vector-icons';
 import styled from "styled-components/native";
-import { Linking } from 'react-native';
 
 const UserNameView = styled.View`
   alignItems: center;
