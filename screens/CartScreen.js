@@ -10,9 +10,16 @@ import {
   Pressable,
   TextInput
 } from 'react-native';
-import React, {useState, useEffect, useMemo}  from 'react';
+import React, { 
+  useState, 
+  useEffect
+}  from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons';
+import { 
+  Ionicons, 
+  FontAwesome, 
+  MaterialIcons 
+} from '@expo/vector-icons';
 import { Surface } from 'react-native-paper';
 import DashedLine from 'react-native-dashed-line';
 import IncrementRadio from '../component/IncrementRadio';

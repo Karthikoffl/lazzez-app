@@ -7,7 +7,10 @@ import {
     TouchableOpacity, 
     Linking 
   } from 'react-native';
-  import React, { useRef, useState } from 'react';
+  import React, { 
+    useRef, 
+    useState 
+} from 'react';
   import { 
     MainView, 
     LoginTitle, 

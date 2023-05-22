@@ -4,25 +4,27 @@ import {
     StyleSheet, 
     ImageBackground, 
     Dimensions, 
-    TouchableOpacity, 
-    Image,
+    TouchableOpacity,
     Linking
   } from 'react-native';
-  import React, { useContext, useState } from 'react';
+  import React, { 
+    useContext, 
+    useState 
+  } from 'react';
   import { 
     MainView, 
     LoginTitle, 
     LoginButton, 
-    ButtonText, 
-    SocialLoginView, 
+    ButtonText,
     LinkText, 
-    FooterView, 
-    OrLine, 
-    OrContainer 
+    FooterView,
   } from '../src/global/styles';
   import { TextInput } from 'react-native-paper';
   import { AuthenticationContext } from '../authentication/authentication.context';
-  import { ActivityIndicator, MD2Colors  } from "react-native-paper";
+  import { 
+    ActivityIndicator, 
+    MD2Colors  
+  } from "react-native-paper";
   
 
 const Register = ({navigation}) => {
@@ -71,11 +73,11 @@ const Register = ({navigation}) => {
                 value={repeatedPassword}
               />
               {!isLoading ? (
-            <LoginButton 
-              onPress={() => onRegister(email, password, repeatedPassword)}
-              >
-              <ButtonText>Register</ButtonText>
-            </LoginButton>
+                <LoginButton 
+                  onPress={() => onRegister(email, password, repeatedPassword)}
+                  >
+                  <ButtonText>Register</ButtonText>
+                </LoginButton>
               ) : (
                 <ActivityIndicator animating={true} color={MD2Colors.orange500} />
               )}

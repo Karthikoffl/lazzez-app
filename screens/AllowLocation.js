@@ -1,5 +1,12 @@
-import { View, Image, TouchableOpacity } from 'react-native';
-import React, { useState, useEffect } from 'react';
+import { 
+  View, 
+  Image, 
+  TouchableOpacity 
+} from 'react-native';
+import React, { 
+  useState, 
+  useEffect 
+} from 'react';
 import { Ionicons } from '@expo/vector-icons';
 import styled from 'styled-components/native';
 import * as Location from 'expo-location';

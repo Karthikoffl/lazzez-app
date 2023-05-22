@@ -1,4 +1,8 @@
-import { View, Image, StyleSheet } from 'react-native';
+import { 
+  View, 
+  Image, 
+  StyleSheet 
+} from 'react-native';
 import React from 'react';
 import Swiper from 'react-native-swiper';
 

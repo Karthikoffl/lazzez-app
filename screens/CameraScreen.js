@@ -1,5 +1,14 @@
-import { TouchableOpacity, View, Text } from 'react-native';
-import React, { useRef, useState, useEffect, useContext } from 'react';
+import { 
+    TouchableOpacity, 
+    View, 
+    Text 
+} from 'react-native';
+import React, { 
+    useRef, 
+    useState, 
+    useEffect, 
+    useContext 
+} from 'react';
 import { Camera } from 'expo-camera';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AuthenticationContext } from '../authentication/authentication.context';

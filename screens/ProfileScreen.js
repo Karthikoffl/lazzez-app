@@ -7,12 +7,28 @@ import {
   ScrollView, 
   RefreshControl 
 } from 'react-native';
-import React, {useState, useEffect, useContext}  from 'react';
-import { useNavigation, useFocusEffect } from '@react-navigation/native';
-import { Surface, List, Avatar, Divider } from 'react-native-paper';
+import React, {
+  useState, 
+  useEffect, 
+  useContext
+}  from 'react';
+import { 
+  useNavigation, 
+  useFocusEffect 
+} from '@react-navigation/native';
+import { 
+  Surface, 
+  Avatar, 
+  Divider 
+} from 'react-native-paper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { AuthenticationContext } from '../authentication/authentication.context';
-import { Feather, SimpleLineIcons, Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { 
+  Feather, 
+  SimpleLineIcons, 
+  Ionicons, 
+  MaterialIcons 
+} from '@expo/vector-icons';
 import styled from "styled-components/native";
 import { Linking } from 'react-native';
 

@@ -1,7 +1,20 @@
-import { View, Text, Image, ScrollView, TouchableOpacity, Pressable, TextInput, StyleSheet } from 'react-native';
-import React, {useState} from 'react';
-import {useNavigation, useRoute } from '@react-navigation/native';
-import { Ionicons, MaterialIcons, FontAwesome } from '@expo/vector-icons';
+import { 
+  View, 
+  Text, 
+  Image, 
+  ScrollView, 
+  TouchableOpacity, 
+  StyleSheet 
+} from 'react-native';
+import React, { useState } from 'react';
+import {
+  useNavigation, 
+  useRoute 
+} from '@react-navigation/native';
+import { 
+  MaterialIcons, 
+  FontAwesome 
+} from '@expo/vector-icons';
 import RadioForm from 'react-native-simple-radio-button';
 import IncrementRadio from '../component/IncrementRadio';
 

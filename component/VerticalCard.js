@@ -1,8 +1,17 @@
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { 
+    View, 
+    Text, 
+    TouchableOpacity, 
+    ScrollView 
+} from 'react-native';
 import React from 'react';
 import RestaurantCardVertical from './RestaurantCardVertical';
 
-const VerticalCard = ({id, title, button}) => {
+const VerticalCard = ({
+    id, 
+    title, 
+    button
+}) => {
   return (
     <View>
         <View style={{flex: 1}}>

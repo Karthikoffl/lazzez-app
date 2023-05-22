@@ -1,10 +1,14 @@
-import { View, Text, Image } from 'react-native';
-import React, { useState } from 'react';
+import { 
+  View, 
+  Text, 
+  Image 
+} from 'react-native';
+import React from 'react';
 import slides from '../component/slides';
 import AppIntroSlider from "react-native-app-intro-slider";
 
 
-const OnBoardingScreen = ({navigation}) => {
+const OnBoardingScreen = ({ navigation }) => {
     const buttonLabel = (label) => {
         return(
           <View style={{

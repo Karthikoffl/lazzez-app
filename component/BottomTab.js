@@ -4,7 +4,7 @@ import HomeScreen from '../screens/HomeScreen';
 import CartScreen from '../screens/CartScreen';
 import OrderScreen from '../screens/OrderScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import {Icon} from 'react-native-elements';
+import { Icon } from 'react-native-elements';
 
 const Tab = createBottomTabNavigator();
 

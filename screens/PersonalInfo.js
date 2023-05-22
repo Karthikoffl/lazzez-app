@@ -1,5 +1,8 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { 
+  View, 
+  TouchableOpacity 
+} from 'react-native';
 import styled from 'styled-components/native';
 import { TextInput } from 'react-native-paper';
 import { Ionicons } from '@expo/vector-icons';
@@ -47,31 +50,33 @@ const PersonalInfo = ({navigation}) => {
         </TouchableOpacity>
             <LoginTitle>Help Us Get To Know</LoginTitle>
             <SubTitle>We need your location to show available restaurants & products.</SubTitle>
-            <TextInput 
-                style={{marginTop: 25}} 
-                mode='outlined' 
-                activeOutlineColor='#F49F1C' 
-                placeholder='Enter Your Name'
-                placeholderTextColor={'#CCCCCC'}
-                label='Name' 
-              />
+
               <TextInput 
-                style={{marginTop: 25}} 
-                keyboardType='email-address'
-                mode='outlined' 
-                activeOutlineColor='#F49F1C' 
-                placeholder='Enter Your E-Mail'
-                placeholderTextColor={'#CCCCCC'}
-                label='E-Mail' 
-              />
-            <LoginButton 
-              onPress={() => {
-                navigation.navigate('Login')
-              }
-              }
-              >
-              <ButtonText>Confirm Detail</ButtonText>
-            </LoginButton>
+                  style={{marginTop: 25}} 
+                  mode='outlined' 
+                  activeOutlineColor='#F49F1C' 
+                  placeholder='Enter Your Name'
+                  placeholderTextColor={'#CCCCCC'}
+                  label='Name' 
+                />
+                <TextInput 
+                  style={{marginTop: 25}} 
+                  keyboardType='email-address'
+                  mode='outlined' 
+                  activeOutlineColor='#F49F1C' 
+                  placeholder='Enter Your E-Mail'
+                  placeholderTextColor={'#CCCCCC'}
+                  label='E-Mail' 
+                />
+              <LoginButton 
+                onPress={() => {
+                  navigation.navigate('Login')
+                }
+                }
+                >
+                <ButtonText>Confirm Detail</ButtonText>
+              </LoginButton>
+
         </View>
     </MainView>
   );

@@ -9,9 +9,16 @@ import {
   RefreshControl, 
   Pressable
 } from 'react-native';
-import React, {useState, useEffect}  from 'react';
+import React, {
+  useState, 
+  useEffect
+}  from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons';
+import { 
+  Ionicons, 
+  FontAwesome, 
+  MaterialIcons 
+} from '@expo/vector-icons';
 import { Surface } from 'react-native-paper';
 
 const OrderScreen = () => {

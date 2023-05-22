@@ -8,7 +8,10 @@ import {
   Image,
   Linking
 } from 'react-native';
-import React, { useContext, useState } from 'react';
+import React, { 
+  useContext, 
+  useState 
+} from 'react';
 import { 
   MainView, 
   LoginTitle, 
@@ -22,7 +25,10 @@ import {
 } from '../src/global/styles';
 import { TextInput } from 'react-native-paper';
 import { AuthenticationContext } from '../authentication/authentication.context';
-import { ActivityIndicator, MD2Colors  } from "react-native-paper";
+import { 
+  ActivityIndicator, 
+  MD2Colors 
+} from "react-native-paper";
 // import auth from '@react-native-firebase/auth';
 // import { GoogleSignin } from '@react-native-google-signin/google-signin';
 // import { LoginManager, AccessToken } from 'react-native-fbsdk-next';
@@ -63,7 +69,7 @@ import { ActivityIndicator, MD2Colors  } from "react-native-paper";
 // }
 
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { onLogin, error, isLoading } = useContext(AuthenticationContext);

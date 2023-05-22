@@ -1,7 +1,22 @@
-import { View, Text, Image, TouchableOpacity, TextInput, } from 'react-native';
+import { 
+  View, 
+  Text, 
+  Image, 
+  TouchableOpacity, 
+  TextInput, 
+} from 'react-native';
 import React from 'react';
-import { Feather, AntDesign, FontAwesome } from '@expo/vector-icons';
-import { Header, HomeLogo, LocationView, SearchView } from '../src/global/styles';
+import { 
+  Feather, 
+  AntDesign, 
+  FontAwesome 
+} from '@expo/vector-icons';
+import { 
+  Header, 
+  HomeLogo, 
+  LocationView, 
+  SearchView 
+} from '../src/global/styles';
 
 
 const HomeHeader = () => {

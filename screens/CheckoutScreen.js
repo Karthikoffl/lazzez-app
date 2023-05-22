@@ -1,6 +1,9 @@
 import { SafeAreaView } from 'react-native';
 import React from 'react';
-import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
+import { 
+  ProgressSteps, 
+  ProgressStep 
+} from 'react-native-progress-steps';
 import { useNavigation } from '@react-navigation/native';
 import MultiStep1 from '../component/MultiStep1';
 import MultiStep2 from '../component/MultiStep2';

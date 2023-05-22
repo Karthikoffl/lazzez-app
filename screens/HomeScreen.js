@@ -1,11 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, {
+  useState, 
+  useEffect
+} from 'react';
 import { ScrollView, RefreshControl } from 'react-native';
 import { MainHomeView } from '../src/global/styles';
 import Categories from '../component/Categories';
 import MainCarousel from '../component/MainCarousel';
 import HomeHeader from '../component/HomeHeader';
 import { useNavigation } from '@react-navigation/native';
-
 
 const HomeScreen = () => {
   const navigation = useNavigation();

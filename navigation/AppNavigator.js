@@ -1,6 +1,11 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Entypo, Ionicons, FontAwesome5, MaterialCommunityIcons } from '@expo/vector-icons';
+import { 
+  Entypo, 
+  Ionicons, 
+  FontAwesome5, 
+  MaterialCommunityIcons 
+} from '@expo/vector-icons';
 import ProfileNavigator from './ProfileNavigator';
 import CheckoutNavigator from './CheckoutNavigator';
 import OrderNavigator from './OrderNavigator';

@@ -1,9 +1,18 @@
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
+import { 
+  View, 
+  Text, 
+  TouchableOpacity, 
+  ScrollView 
+} from 'react-native';
 import React from 'react';
 import RestaurantCard from './RestaurantCard'; 
 // import { getCategories } from '../api';
 
-const FoodCard = ({id, title, button}) => {
+const FoodCard = ({
+  id, 
+  title, 
+  button
+}) => {
   // const [products, setProducts] = useState([]);
 
   // useEffect(() => {

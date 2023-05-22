@@ -1,8 +1,17 @@
-import { View, Text, TouchableOpacity, Image, Pressable } from 'react-native';
+import { 
+  View, 
+  Text, 
+  TouchableOpacity, 
+  Image, 
+  Pressable 
+} from 'react-native';
 import React, {useState} from 'react';
-import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
+import { 
+  FontAwesome, 
+  Ionicons, 
+  MaterialIcons 
+} from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import "react-native-gesture-handler";
 
 const RestaurantCardVertical = ({
     id,
