@@ -11,6 +11,7 @@ const ProductScreen = () => {
   const [selected, setSelected] = useState(false);
   const [selected1, setSelected1] = useState(false);
   const [selected2, setSelected2] = useState(false);
+  const [selected3, setSelected3] = useState(false);
 
 
   const [value, setValue] = useState(0);
@@ -35,14 +36,14 @@ const ProductScreen = () => {
       <View style={{position: 'relative'}}>
         <Image 
           source={image}
-          style={{width: '100%', height: 250, backgroundColor: '#fff'}}
+          style={{width: '100%', height: 200, backgroundColor: '#fff'}}
         />
-        <TouchableOpacity 
+        {/* <TouchableOpacity 
           style={{position: 'absolute', top: 44, left: 10, padding: 2, backgroundColor: '#fff', borderRadius: 50}} 
           onPress={navigation.goBack}
           >
           <Ionicons name="arrow-back-outline" size={30} color="black" />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
       <View style={{backgroundColor: '#fff', height: '100%', marginBottom: 30}}>
         <View style={{flexDirection: 'row', paddingHorizontal: 15, paddingTop: 30}}>
@@ -83,7 +84,7 @@ const ProductScreen = () => {
           <Text style={{fontWeight: '600', fontSize: 22}}>Addons</Text>
         </View>
         <View style={{flexDirection: 'row', padding: 10}}>
-          <TouchableOpacity onPress={() => setSelected((selected) => !selected)} style={{paddingHorizontal: 10}}>
+          <TouchableOpacity onPress={() => setSelected((selected) => !selected)} style={{paddingHorizontal: 5}}>
             {!selected ? 
               <View style={styles.inActiveAddon}>
                 <Text style={styles.inActiveText}>Cheese</Text>
@@ -95,7 +96,7 @@ const ProductScreen = () => {
                 </View>
               </View>}
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setSelected1((selected1) => !selected1)} style={{paddingHorizontal: 10}}>
+          <TouchableOpacity onPress={() => setSelected1((selected1) => !selected1)} style={{paddingHorizontal: 7}}>
           {!selected1 ? 
               <View style={styles.inActiveAddon}>
                 <Text style={styles.inActiveText}>Coke</Text>
@@ -107,13 +108,25 @@ const ProductScreen = () => {
                 </View>
               </View>}
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => setSelected2((selected2) => !selected2)} style={{paddingHorizontal: 10}}>
+          <TouchableOpacity onPress={() => setSelected2((selected2) => !selected2)} style={{paddingHorizontal: 7}}>
           {!selected2 ? 
               <View style={styles.inActiveAddon}>
                 <Text style={styles.inActiveText}>Water</Text>
               </View> : 
               <View style={styles.activeAddon}>
                 <Text style={styles.activeText}>Water</Text>
+                <View style={{position: 'absolute', top: 35, left: -15}}>
+                  <IncrementRadio />
+                </View>
+              </View>}
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => setSelected3((selected3) => !selected3)} style={{paddingHorizontal: 7}}>
+          {!selected3 ? 
+              <View style={styles.inActiveAddon}>
+                <Text style={styles.inActiveText}>Ketchup</Text>
+              </View> : 
+              <View style={styles.activeAddon}>
+                <Text style={styles.activeText}>Ketchup</Text>
                 <View style={{position: 'absolute', top: 35, left: -15}}>
                   <IncrementRadio />
                 </View>

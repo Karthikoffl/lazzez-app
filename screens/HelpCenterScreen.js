@@ -1,12 +1,11 @@
-import { View, Text, SafeAreaView } from 'react-native'
-import React from 'react'
+import { Linking } from 'react-native';
 
 const HelpCenterScreen = () => {
+
   return (
-    <SafeAreaView style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>HelpCenterScreen</Text>
-    </SafeAreaView>
+    Linking.openURL(`tel:$+918807443477`)
   )
 }
 
 export default HelpCenterScreen
+

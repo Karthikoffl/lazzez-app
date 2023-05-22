@@ -9,7 +9,7 @@ const HomeNavigator = () => {
   return (
     <Stack.Navigator>
         <Stack.Screen options={{ headerShown: false }} name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen options={{ headerShown: false }} name="ProductScreen" component={ProductScreen} />
+        <Stack.Screen options={{ presentation: 'modal', headerShown: false }} name="ProductScreen" component={ProductScreen} />
     </Stack.Navigator>
   );
 };

@@ -22,8 +22,8 @@ const HomeHeader = () => {
           placeholder='Type Something And Hit Enter...' 
         />
         <TouchableOpacity>
-          <AntDesign name="search1" size={26} color="#F49F1C" />
-        </TouchableOpacity>  
+          <AntDesign name="search1" size={24} color="#F49F1C" />
+        </TouchableOpacity>
         <TouchableOpacity>
           <FontAwesome name="microphone" size={24} color="#F49F1C" />
         </TouchableOpacity>  

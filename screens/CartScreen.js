@@ -14,21 +14,15 @@ import React, {useState, useEffect, useMemo}  from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons, FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { Surface } from 'react-native-paper';
-import RadioForm from 'react-native-simple-radio-button';
 import DashedLine from 'react-native-dashed-line';
 import IncrementRadio from '../component/IncrementRadio';
+import SwitchSelector from "react-native-switch-selector";
 
 
 const CartScreen = () => {
   const navigation = useNavigation();
   const [refreshing, setRefreshing] = useState(true);
   const [dataSource, setDataSource] = useState([]);
-
-  const [value, setValue] = useState(0);
-  const items = [
-    {label: "Home Delivery", value: 0},
-    {label: "Store Pickup", value: 1},
-  ]
 
   const onRefresh = () => {
     //Clear old data of the list
@@ -145,14 +139,27 @@ const CartScreen = () => {
               <View style={{paddingVertical: 20, paddingHorizontal: 10}}>
                 <Text style={{fontSize: 16, fontWeight: '600'}}>Delivery Options</Text>
                 <View style={{paddingVertical: 20}}>
-                  <RadioForm 
-                    radio_props={items} 
-                    initial={value} 
-                    selectedButtonColor={'#F49F1C'} 
-                    buttonColor={'#CFD1DD'}
-                    buttonSize={12} 
-                    onPress={() => {}} 
-                  />
+                <SwitchSelector
+                  initial={0}
+                  onPress={() => {}}
+                  textColor={'#F49F1C'}
+                  selectedColor={'#fff'}
+                  buttonColor={'#F49F1C'}
+                  borderColor={'#fff'}
+                  borderRadius={9}
+                  fontSize={15}
+                  bold={true}
+                  height={48}
+                  animationDuration={275}
+                  style={{shadowColor: '#171717', shadowOpacity: 0.1}}
+                  hasPadding
+                  options={[
+                    { label: "Home Delivery", value: "D" },
+                    { label: "Store Pickup", value: "S" }
+                  ]}
+                  testID="delivery-switch-selector"
+                  accessibilityLabel="delivery-switch-selector"
+                />
                 </View>
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 5, paddingVertical: 10}}>
                   <Text>Item Price</Text>
