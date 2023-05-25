@@ -41,6 +41,9 @@ const Login = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const { onLogin, error, isLoading } = useContext(AuthenticationContext);
 
+
+  // ------------------Google login setup-----------------
+  
   // const [initializing, setInitializing] = useState(true);
   // const [user, setUser] = useState();
   // GoogleSignin.configure({
@@ -75,27 +78,33 @@ const Login = ({ navigation }) => {
 
   // if (initializing) return null;
 
-  const onFacebookButtonPress = async () => {
-    // Attempt login with permissions
-    const result = await LoginManager.logInWithPermissions(['public_profile', 'email']);
-  
-    if (result.isCancelled) {
-      throw 'User cancelled the login process';
-    }
-  
-    // Once signed in, get the users AccesToken
-    const data = await AccessToken.getCurrentAccessToken();
-  
-    if (!data) {
-      throw 'Something went wrong obtaining access token';
-    }
-  
-    // Create a Firebase credential with the AccessToken
-    const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
-  
-    // Sign-in the user with the credential
-    return auth().signInWithCredential(facebookCredential);
-  }
+  // --------------Facebook login setup----------------
+
+  // function onAuthStateChanged(user) {
+  //   setUser(user);
+  //   if(initializing) setInitializing(false);
+  // }
+
+  // useInsertionEffect(() => {
+  //   const subscriber = firebase.auth().onAuthStateChanged(onAuthStateChanged);
+  //   return subscriber; 
+  // }, []);
+
+  // const signInWithFB = async () => {
+  //   try {
+  //     await LoginManager.logInWithPermissions(['public_profile', 'email']);
+  //     const data = await AccessToken.getCurrentAccessToken();
+  //     if (!data) {
+  //       return;
+  //     }
+  //     const facebookCredential = FacebookAuthProvider.credential(data.accessToken);
+  //     const auth = getAuth();
+  //     const response = await signInWithCredential(firebase.auth(), facebookCredential);
+  //     console.log(response);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
 
   return (
     <MainView>
@@ -151,7 +160,7 @@ const Login = ({ navigation }) => {
         <TouchableOpacity onPress={() => {}}>
           <Image  source={require('../assets/images/gmail.png')} />
         </TouchableOpacity>  
-        <TouchableOpacity onPress={onFacebookButtonPress}>
+        <TouchableOpacity onPress={() => {}}>
           <Image source={require('../assets/images/fb.png')} />
         </TouchableOpacity>  
       </SocialLoginView>
