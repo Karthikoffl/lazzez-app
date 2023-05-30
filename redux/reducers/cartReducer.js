@@ -1,5 +1,5 @@
 let defaultState = {
-    selectedItems: {items: [], restaurantName: ''}
+    selectedItems: {items: [], productName: ''}
 }
 
 let cartReducer = (state = defaultState, action) => {
@@ -12,17 +12,17 @@ let cartReducer = (state = defaultState, action) => {
                 console.log("ADD TO CART");
                 
                 newState.selectedItems = {
-                    // items: [...newState.selectedItems.items, action.payload],
-                    // restaurantName: action.payload.restaurantName,
+                    items: [...newState.selectedItems.items, action.payload],
+                    productName: action.payload.productName,
                 };
 
             } else {
                 console.log("REMOVE FROM CART")
                 newState.selectedItems = {
-                    // items: [
-                    //     ...newState.selectedItems.items.filter((item) => item.title !== action.payload.title),
-                    // ],
-                    // restaurantName: action.payload.restaurantName,
+                    items: [
+                        ...newState.selectedItems.items.filter((item) => item.title !== action.payload.title),
+                    ],
+                    productName: action.payload.productName,
                 };
             }
             console.log(newState);
