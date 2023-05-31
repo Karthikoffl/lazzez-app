@@ -1,26 +1,21 @@
-import React, { 
-  useState, 
-  createContext, 
-  useRef 
-} from "react";
+import React, {useState, createContext, useRef, useEffect} from 'react';
 import {
   signOut,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   getAuth,
-} from "firebase/auth";
-
-import { loginRequest } from "./authentication.service";
+} from 'firebase/auth';
+import {loginRequest} from './authentication.service';
 
 export const AuthenticationContext = createContext();
 
-export const AuthenticationContextProvider = ({ children }) => {
+export const AuthenticationContextProvider = ({children}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const auth = useRef(getAuth()).current;
 
-  onAuthStateChanged(auth, (usr) => {
+  onAuthStateChanged(auth, usr => {
     if (usr) {
       setUser(usr);
       setIsLoading(false);
@@ -32,11 +27,11 @@ export const AuthenticationContextProvider = ({ children }) => {
   const onLogin = (email, password) => {
     setIsLoading(true);
     loginRequest(auth, email, password)
-      .then((u) => {
+      .then(u => {
         setUser(u);
         setIsLoading(false);
       })
-      .catch((e) => {
+      .catch(e => {
         setIsLoading(false);
         setError(e.toString());
       });
@@ -45,15 +40,15 @@ export const AuthenticationContextProvider = ({ children }) => {
   const onRegister = (email, password, repeatedPassword) => {
     setIsLoading(true);
     if (password !== repeatedPassword) {
-      setError("Error: Passwords do not match");
+      setError('Error: Passwords do not match');
       return;
     }
     createUserWithEmailAndPassword(auth, email, password)
-      .then((u) => {
+      .then(u => {
         setUser(u);
         setIsLoading(false);
       })
-      .catch((e) => {
+      .catch(e => {
         setIsLoading(false);
         setError(e.toString());
       });
@@ -76,8 +71,7 @@ export const AuthenticationContextProvider = ({ children }) => {
         onLogin,
         onRegister,
         onLogout,
-      }}
-    >
+      }}>
       {children}
     </AuthenticationContext.Provider>
   );
